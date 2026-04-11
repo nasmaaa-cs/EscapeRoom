@@ -1,6 +1,7 @@
 #include "MainWindow.h"
 #include <QPixmap>
 #include <QResizeEvent>
+#include <QTimer>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -26,6 +27,18 @@ MainWindow::MainWindow(QWidget *parent)
     lightButton = new QPushButton("Light", central);
     laptopButton = new QPushButton("Laptop", central);
 
+    // Timer
+    timerLabel = new QLabel("00:00", this);
+    timerLabel->setStyleSheet("color: white; font-size: 20px;");
+    timerLabel->move(20, 20);
+
+    // fake opponent
+    opponentLabel = new QLabel("Opponent: 00:00", this);
+    opponentLabel->move(20, 50);
+    opponentLabel->setStyleSheet("color: red;");
+    opponentLabel->hide();
+
+
     // Position buttons
     leftButton->move(50, 500);
     rightButton->move(700, 500);
@@ -42,29 +55,17 @@ MainWindow::MainWindow(QWidget *parent)
     this->resize(800, 600);
     this->setMinimumSize(800, 600);
 
-    // Timer
-    timerLabel = new QLabel("00:00", this);
-    timerLabel->setStyleSheet("color: white; font-size: 20px;");
-    timerLabel->move(20, 20);
-    opponentLabel->hide();
-
-    // Set the mode explicitly for testing
-    mode = GameMode::RACE;
-
     // Setup the UI update timer
     uiTimer = new QTimer(this);
     connect(uiTimer, &QTimer::timeout, this, &MainWindow::updateTimerUI);
 
+
+    // Set the mode explicitly for testing
+    mode = GameMode::RACE;
+
+
     // Trigger the start sequence
     startGameTimer();
-
-    updateView();
-
-
-    // fake opponent
-    opponentLabel = new QLabel("Opponent: 00:00", this);
-    opponentLabel->move(20, 50);
-    opponentLabel->setStyleSheet("color: red;");
 
     updateView();
 }

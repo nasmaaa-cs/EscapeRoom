@@ -311,7 +311,7 @@ OPENGL_xmesa_INCLUDE_DIR:PATH=OPENGL_xmesa_INCLUDE_DIR-NOTFOUND
 PKG_CONFIG_ARGN:STRING=
 
 //pkg-config executable
-PKG_CONFIG_EXECUTABLE:FILEPATH=PKG_CONFIG_EXECUTABLE-NOTFOUND
+PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
 //Additional directories where find(Qt6 ...) host Qt components
 // are searched
@@ -608,6 +608,10 @@ PKG_XKB_STATIC_LIBS_L:INTERNAL=
 PKG_XKB_STATIC_LIBS_OTHER:INTERNAL=
 PKG_XKB_STATIC_LIBS_PATHS:INTERNAL=
 PKG_XKB_VERSION:INTERNAL=
+PKG_XKB_xkbcommon_INCLUDEDIR:INTERNAL=
+PKG_XKB_xkbcommon_LIBDIR:INTERNAL=
+PKG_XKB_xkbcommon_PREFIX:INTERNAL=
+PKG_XKB_xkbcommon_VERSION:INTERNAL=
 //Qt feature: abstractbutton (from target Qt6::Widgets)
 QT_FEATURE_abstractbutton:INTERNAL=ON
 //Qt feature: abstractslider (from target Qt6::Widgets)

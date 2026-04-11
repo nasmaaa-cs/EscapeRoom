@@ -1,6 +1,7 @@
 /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/moc_MainWindow.cpp: /home/nasma/draftEscapeRoomGame/MainWindow.h \
   /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/moc_predefs.h \
   /home/nasma/draftEscapeRoomGame/gameController.h \
+  /home/nasma/draftEscapeRoomGame/gameMode.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \

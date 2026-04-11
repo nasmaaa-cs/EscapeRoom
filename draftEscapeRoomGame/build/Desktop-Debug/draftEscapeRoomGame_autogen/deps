@@ -8,6 +8,8 @@ draftEscapeRoomGame_autogen/timestamp: \
 	/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/moc_predefs.h \
 	/home/nasma/draftEscapeRoomGame/gameController.cpp \
 	/home/nasma/draftEscapeRoomGame/gameController.h \
+	/home/nasma/draftEscapeRoomGame/gameMode.cpp \
+	/home/nasma/draftEscapeRoomGame/gameMode.h \
 	/home/nasma/draftEscapeRoomGame/main.cpp \
 	/home/nasma/draftEscapeRoomGame/mainMenu.cpp \
 	/home/nasma/draftEscapeRoomGame/mainMenu.h \

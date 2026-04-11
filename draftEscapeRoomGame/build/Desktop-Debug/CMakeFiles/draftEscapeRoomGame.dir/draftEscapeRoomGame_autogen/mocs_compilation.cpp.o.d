@@ -405,6 +405,7 @@ CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/mocs_compilation.
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QElapsedTimer \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
+  /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/../../../../gameMode.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextcursor.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextformat.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qpen.h \

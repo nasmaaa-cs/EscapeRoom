@@ -222,6 +222,12 @@
 			null
 		],
 		[
+			"/home/nasma/draftEscapeRoomGame/gameMode.h",
+			"MU",
+			"EWIEGA46WW/moc_gameMode.cpp",
+			null
+		],
+		[
 			"/home/nasma/draftEscapeRoomGame/mainMenu.h",
 			"MU",
 			"EWIEGA46WW/moc_mainMenu.cpp",
@@ -288,6 +294,7 @@
 	[
 		[ "/home/nasma/draftEscapeRoomGame/MainWindow.cpp", "MU", null ],
 		[ "/home/nasma/draftEscapeRoomGame/gameController.cpp", "MU", null ],
+		[ "/home/nasma/draftEscapeRoomGame/gameMode.cpp", "MU", null ],
 		[ "/home/nasma/draftEscapeRoomGame/main.cpp", "MU", null ],
 		[ "/home/nasma/draftEscapeRoomGame/mainMenu.cpp", "MU", null ]
 	],

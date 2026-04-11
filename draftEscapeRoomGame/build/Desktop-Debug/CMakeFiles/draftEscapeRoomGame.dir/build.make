@@ -156,10 +156,24 @@ CMakeFiles/draftEscapeRoomGame.dir/mainMenu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/draftEscapeRoomGame.dir/mainMenu.cpp.s"
 	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nasma/draftEscapeRoomGame/mainMenu.cpp -o CMakeFiles/draftEscapeRoomGame.dir/mainMenu.cpp.s
 
+CMakeFiles/draftEscapeRoomGame.dir/gameMode.cpp.o: CMakeFiles/draftEscapeRoomGame.dir/flags.make
+CMakeFiles/draftEscapeRoomGame.dir/gameMode.cpp.o: /home/nasma/draftEscapeRoomGame/gameMode.cpp
+CMakeFiles/draftEscapeRoomGame.dir/gameMode.cpp.o: CMakeFiles/draftEscapeRoomGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/draftEscapeRoomGame.dir/gameMode.cpp.o"
+	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/draftEscapeRoomGame.dir/gameMode.cpp.o -MF CMakeFiles/draftEscapeRoomGame.dir/gameMode.cpp.o.d -o CMakeFiles/draftEscapeRoomGame.dir/gameMode.cpp.o -c /home/nasma/draftEscapeRoomGame/gameMode.cpp
+
+CMakeFiles/draftEscapeRoomGame.dir/gameMode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/draftEscapeRoomGame.dir/gameMode.cpp.i"
+	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nasma/draftEscapeRoomGame/gameMode.cpp > CMakeFiles/draftEscapeRoomGame.dir/gameMode.cpp.i
+
+CMakeFiles/draftEscapeRoomGame.dir/gameMode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/draftEscapeRoomGame.dir/gameMode.cpp.s"
+	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nasma/draftEscapeRoomGame/gameMode.cpp -o CMakeFiles/draftEscapeRoomGame.dir/gameMode.cpp.s
+
 CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp.o: CMakeFiles/draftEscapeRoomGame.dir/flags.make
 CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp.o: draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp
 CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp.o: CMakeFiles/draftEscapeRoomGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp.o"
 	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp.o -MF CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp.o.d -o CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp.o -c /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp
 
 CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp.i: cmake_force
@@ -177,6 +191,7 @@ draftEscapeRoomGame_OBJECTS = \
 "CMakeFiles/draftEscapeRoomGame.dir/MainWindow.cpp.o" \
 "CMakeFiles/draftEscapeRoomGame.dir/gameController.cpp.o" \
 "CMakeFiles/draftEscapeRoomGame.dir/mainMenu.cpp.o" \
+"CMakeFiles/draftEscapeRoomGame.dir/gameMode.cpp.o" \
 "CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp.o"
 
 # External object files for target draftEscapeRoomGame
@@ -187,6 +202,7 @@ draftEscapeRoomGame: CMakeFiles/draftEscapeRoomGame.dir/main.cpp.o
 draftEscapeRoomGame: CMakeFiles/draftEscapeRoomGame.dir/MainWindow.cpp.o
 draftEscapeRoomGame: CMakeFiles/draftEscapeRoomGame.dir/gameController.cpp.o
 draftEscapeRoomGame: CMakeFiles/draftEscapeRoomGame.dir/mainMenu.cpp.o
+draftEscapeRoomGame: CMakeFiles/draftEscapeRoomGame.dir/gameMode.cpp.o
 draftEscapeRoomGame: CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp.o
 draftEscapeRoomGame: CMakeFiles/draftEscapeRoomGame.dir/build.make
 draftEscapeRoomGame: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
@@ -195,7 +211,7 @@ draftEscapeRoomGame: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
 draftEscapeRoomGame: /usr/lib/x86_64-linux-gnu/libGLX.so
 draftEscapeRoomGame: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 draftEscapeRoomGame: CMakeFiles/draftEscapeRoomGame.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable draftEscapeRoomGame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable draftEscapeRoomGame"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/draftEscapeRoomGame.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

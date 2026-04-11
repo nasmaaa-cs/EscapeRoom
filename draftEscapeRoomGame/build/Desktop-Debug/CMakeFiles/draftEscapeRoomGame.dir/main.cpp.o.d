@@ -407,6 +407,7 @@ CMakeFiles/draftEscapeRoomGame.dir/main.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevice.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextdocument.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qurl.h \
+  /home/nasma/draftEscapeRoomGame/gameMode.h \
   /home/nasma/draftEscapeRoomGame/MainWindow.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h \

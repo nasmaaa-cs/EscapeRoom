@@ -1731,7 +1731,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "PKG_CONFIG_EXECUTABLE-NOTFOUND"
+			"value" : "/usr/bin/pkg-config"
 		},
 		{
 			"name" : "PKG_XKB_CFLAGS",
@@ -1975,6 +1975,54 @@
 		},
 		{
 			"name" : "PKG_XKB_VERSION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PKG_XKB_xkbcommon_INCLUDEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PKG_XKB_xkbcommon_LIBDIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PKG_XKB_xkbcommon_PREFIX",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PKG_XKB_xkbcommon_VERSION",
 			"properties" : 
 			[
 				{

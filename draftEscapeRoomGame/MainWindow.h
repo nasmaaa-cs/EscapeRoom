@@ -6,6 +6,7 @@
 #include "gameController.h"
 #include <QTimer>
 #include <QElapsedTimer>
+#include "gameMode.h"
 
 
 class MainWindow : public QMainWindow {
@@ -17,6 +18,8 @@ public:
     void startGameTimer();
     void updateTimerUI();
 
+    void setGameMode(gameMode m);
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
@@ -24,7 +27,7 @@ private:
     GameController controller;
 
     //game mode
-    GameMode mode;
+    gameMode mode;
     bool raceStarted = false;
     QElapsedTimer raceStartTime;
 

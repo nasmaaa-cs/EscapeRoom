@@ -36,7 +36,6 @@ MainWindow::MainWindow(QWidget *parent)
     opponentLabel = new QLabel("Opponent: 00:00", this);
     opponentLabel->move(20, 50);
     opponentLabel->setStyleSheet("color: red;");
-    opponentLabel->hide();
 
 
     // Position buttons
@@ -59,14 +58,6 @@ MainWindow::MainWindow(QWidget *parent)
     uiTimer = new QTimer(this);
     connect(uiTimer, &QTimer::timeout, this, &MainWindow::updateTimerUI);
 
-
-    // Set the mode explicitly for testing
-    mode = GameMode::RACE;
-
-
-    // Trigger the start sequence
-    startGameTimer();
-
     updateView();
 }
 
@@ -88,7 +79,7 @@ void MainWindow::onLight() {
 
 void MainWindow::onLaptop() {
     roomLabel->clear();
-    roomLabel->setText("ZOOMED INTO LAPTOP\n(Puzzle coming soon)");
+    roomLabel->setText("ZOOMED INTO LAPTOP");
     roomLabel->setStyleSheet("color: white; font-size: 24px;");
 }
 
@@ -134,6 +125,18 @@ void MainWindow::resizeEvent(QResizeEvent *event)
     lightButton->move(width()/2 - 40, 20);
     laptopButton->move(width()/2 - 50, height()/2);
 }
+//Game mode
+void MainWindow::setGameMode(gameMode m){
+    mode = m;
+    raceStarted = false;
+    if(mode == gameMode::RACE){
+        opponentLabel->show();
+    }
+    else {
+        opponentLabel->hide();
+    }
+    startGameTimer();
+}
 
 //Timer Starter
 
@@ -142,7 +145,7 @@ void MainWindow::startGameTimer()
     // Start the reference clocks
     gameTimer.start();
 
-    if (mode == GameMode::RACE && !raceStarted) {
+    if (mode == gameMode::RACE && !raceStarted) {
         raceStartTime.start();
         fakeOpponentTimer.start(); // Only start it here for sync
         raceStarted = true;
@@ -155,7 +158,7 @@ void MainWindow::startGameTimer()
 void MainWindow::updateTimerUI()
 {
     // solo or race mode main timer
-    qint64 ms = (mode == GameMode::RACE)
+    qint64 ms = (mode == gameMode::RACE)
                     ? raceStartTime.elapsed()
                     : gameTimer.elapsed();
 
@@ -169,7 +172,7 @@ void MainWindow::updateTimerUI()
         );
 
     // if solo mode, hide opponent
-    if (mode != GameMode::RACE) {
+    if (mode != gameMode::RACE) {
         opponentLabel->hide();
         return;
     }

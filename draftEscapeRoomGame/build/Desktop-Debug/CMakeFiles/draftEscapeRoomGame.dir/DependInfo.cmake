@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp" "CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp.o.d"
   "/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/mocs_compilation.cpp" "CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/mocs_compilation.cpp.o.d"
   "/home/nasma/draftEscapeRoomGame/gameController.cpp" "CMakeFiles/draftEscapeRoomGame.dir/gameController.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/gameController.cpp.o.d"
+  "/home/nasma/draftEscapeRoomGame/gameMode.cpp" "CMakeFiles/draftEscapeRoomGame.dir/gameMode.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/gameMode.cpp.o.d"
   "/home/nasma/draftEscapeRoomGame/main.cpp" "CMakeFiles/draftEscapeRoomGame.dir/main.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/main.cpp.o.d"
   "/home/nasma/draftEscapeRoomGame/mainMenu.cpp" "CMakeFiles/draftEscapeRoomGame.dir/mainMenu.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/mainMenu.cpp.o.d"
   )

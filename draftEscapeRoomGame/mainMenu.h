@@ -5,12 +5,16 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include "gameMode.h"
+#include <QResizeEvent>
 
 class mainMenu : public QWidget {
     Q_OBJECT
 
 public:
     mainMenu();
+
+protected:
+    void resizeEvent(QResizeEvent *event) override;
 
 signals:
 
@@ -21,6 +25,7 @@ private:
     QPushButton *soloButton;
     QPushButton *raceButton;
     QPushButton *startButton;
+    QLabel *background;
 
     bool modeSelected = false;
 

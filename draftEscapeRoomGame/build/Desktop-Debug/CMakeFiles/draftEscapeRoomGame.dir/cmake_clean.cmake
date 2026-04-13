@@ -10,8 +10,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/mocs_compilation.cpp.o.d"
   "CMakeFiles/draftEscapeRoomGame.dir/gameController.cpp.o"
   "CMakeFiles/draftEscapeRoomGame.dir/gameController.cpp.o.d"
-  "CMakeFiles/draftEscapeRoomGame.dir/gameMode.cpp.o"
-  "CMakeFiles/draftEscapeRoomGame.dir/gameMode.cpp.o.d"
   "CMakeFiles/draftEscapeRoomGame.dir/main.cpp.o"
   "CMakeFiles/draftEscapeRoomGame.dir/main.cpp.o.d"
   "CMakeFiles/draftEscapeRoomGame.dir/mainMenu.cpp.o"

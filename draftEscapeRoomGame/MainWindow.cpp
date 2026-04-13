@@ -89,10 +89,10 @@ void MainWindow::updateView() {
     QString image;
 
     switch (controller.currentWall) {
-    case Wall::FRONT: image = ":/images/front.png"; break;
-    case Wall::LEFT:  image = ":/images/left.png"; break;
-    case Wall::RIGHT: image = ":/images/right.png"; break;
-    case Wall::BACK:  image = ":/images/back.png"; break;
+    case Wall::FRONT: image = ":/images/images/front.png"; break;
+    case Wall::LEFT:  image = ":/images/images/front.png"; break;
+    case Wall::RIGHT: image = ":/images/images/right.png"; break;
+    case Wall::BACK:  image = ":/images/images/back.png"; break;
     }
 
     roomLabel->setStyleSheet(""); // reset style (important after laptop text)

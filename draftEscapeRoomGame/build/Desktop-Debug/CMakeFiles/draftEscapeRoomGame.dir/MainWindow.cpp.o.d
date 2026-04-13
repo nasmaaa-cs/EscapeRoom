@@ -404,6 +404,7 @@ CMakeFiles/draftEscapeRoomGame.dir/MainWindow.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QElapsedTimer \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
+  /home/nasma/draftEscapeRoomGame/gameMode.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QPixmap \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QResizeEvent \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qevent.h \

@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-f072ca1939cb52a05554.json",
+					"jsonFile" : "directory-.-Debug-841c6a9ea3a04e41a091.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "draftEscapeRoomGame::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-draftEscapeRoomGame-Debug-d597f958303ac7c85a19.json",
+					"jsonFile" : "target-draftEscapeRoomGame-Debug-435f58f25ac690652c25.json",
 					"name" : "draftEscapeRoomGame",
 					"projectIndex" : 0
 				},

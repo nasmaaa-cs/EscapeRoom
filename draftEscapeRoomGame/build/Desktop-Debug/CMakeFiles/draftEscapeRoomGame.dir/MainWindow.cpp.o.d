@@ -395,16 +395,12 @@ CMakeFiles/draftEscapeRoomGame.dir/MainWindow.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevice.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextdocument.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qurl.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
-  /home/nasma/draftEscapeRoomGame/gameController.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimer.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QElapsedTimer \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
-  /home/nasma/draftEscapeRoomGame/gameMode.h \
+  /home/nasma/draftEscapeRoomGame/gameTypes.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QPixmap \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QResizeEvent \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qevent.h \
@@ -422,4 +418,10 @@ CMakeFiles/draftEscapeRoomGame.dir/MainWindow.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QSize \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QSizeF \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QTransform \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h \
+  /home/nasma/draftEscapeRoomGame/GameWorld.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
+  /home/nasma/draftEscapeRoomGame/gameController.h

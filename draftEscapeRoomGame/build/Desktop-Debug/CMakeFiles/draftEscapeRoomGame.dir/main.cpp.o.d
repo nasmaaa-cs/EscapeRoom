@@ -385,7 +385,6 @@ CMakeFiles/draftEscapeRoomGame.dir/main.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qlocale.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariant.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qguiapplication_platform.h \
-  /home/nasma/draftEscapeRoomGame/mainMenu.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qaction.h \
@@ -397,6 +396,7 @@ CMakeFiles/draftEscapeRoomGame.dir/main.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qfontmetrics.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qfontinfo.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \
+  /home/nasma/draftEscapeRoomGame/mainMenu.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
@@ -412,7 +412,6 @@ CMakeFiles/draftEscapeRoomGame.dir/main.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayout.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
-  /home/nasma/draftEscapeRoomGame/gameMode.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QResizeEvent \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qevent.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qpointer.h \
@@ -428,13 +427,14 @@ CMakeFiles/draftEscapeRoomGame.dir/main.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QSize \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QSizeF \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QTransform \
+  /home/nasma/draftEscapeRoomGame/gameTypes.h \
   /home/nasma/draftEscapeRoomGame/MainWindow.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
-  /home/nasma/draftEscapeRoomGame/gameController.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimer.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QElapsedTimer \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qelapsedtimer.h
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
+  /home/nasma/draftEscapeRoomGame/gameMode.h

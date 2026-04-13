@@ -1,6 +1,6 @@
-CMakeFiles/draftEscapeRoomGame.dir/mainMenu.cpp.o: \
-  /home/nasma/draftEscapeRoomGame/mainMenu.cpp \
-  /home/nasma/draftEscapeRoomGame/mainMenu.h \
+CMakeFiles/draftEscapeRoomGame.dir/GameWorld.cpp.o: \
+  /home/nasma/draftEscapeRoomGame/GameWorld.cpp \
+  /home/nasma/draftEscapeRoomGame/GameWorld.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \
@@ -386,9 +386,6 @@ CMakeFiles/draftEscapeRoomGame.dir/mainMenu.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qcursor.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qbitmap.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLabel \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlabel.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
@@ -396,11 +393,9 @@ CMakeFiles/draftEscapeRoomGame.dir/mainMenu.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevice.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextdocument.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qurl.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayout.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QResizeEvent \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qevent.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreevent.h \
@@ -418,4 +413,6 @@ CMakeFiles/draftEscapeRoomGame.dir/mainMenu.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QSizeF \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QTransform \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h \
-  /home/nasma/draftEscapeRoomGame/gameTypes.h
+  /home/nasma/draftEscapeRoomGame/gameController.h \
+  /home/nasma/draftEscapeRoomGame/gameTypes.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QPixmap

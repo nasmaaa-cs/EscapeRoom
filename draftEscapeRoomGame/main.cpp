@@ -1,4 +1,5 @@
 #include <QApplication>
+#include <QWidget>
 #include "mainMenu.h"
 #include "MainWindow.h"
 #include "gameMode.h"
@@ -11,18 +12,12 @@ int main(int argc, char *argv[])
 
     menu.show();
 
-    //QObject::connect(&menu, &mainMenu::startGame, [&]() {
-    //    menu.close();
-    //   game.show();
-    //   game.startGameTimer();
-    //});
-
-    QObject::connect(&menu, &mainMenu::StartGame, [&](gameMode mode) {
+    QObject::connect(&menu, &mainMenu::StartGame, [&](GameMode mode) {
         MainWindow *game = new MainWindow();
-        game->setGameMode(mode);
+        game->startGame(mode);
         game->showMaximized();
         menu.close();
-});
+    });
 
     return a.exec();
 }

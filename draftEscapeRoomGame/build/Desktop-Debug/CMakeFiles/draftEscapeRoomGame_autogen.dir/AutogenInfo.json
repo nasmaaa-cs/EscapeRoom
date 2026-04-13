@@ -210,6 +210,12 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/nasma/draftEscapeRoomGame/GameWorld.h",
+			"MU",
+			"EWIEGA46WW/moc_GameWorld.cpp",
+			null
+		],
+		[
 			"/home/nasma/draftEscapeRoomGame/MainWindow.h",
 			"MU",
 			"EWIEGA46WW/moc_MainWindow.cpp",
@@ -222,9 +228,9 @@
 			null
 		],
 		[
-			"/home/nasma/draftEscapeRoomGame/gameMode.h",
+			"/home/nasma/draftEscapeRoomGame/gameTypes.h",
 			"MU",
-			"EWIEGA46WW/moc_gameMode.cpp",
+			"EWIEGA46WW/moc_gameTypes.cpp",
 			null
 		],
 		[
@@ -292,6 +298,7 @@
 	"SETTINGS_FILE" : "/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/CMakeFiles/draftEscapeRoomGame_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "/home/nasma/draftEscapeRoomGame/GameWorld.cpp", "MU", null ],
 		[ "/home/nasma/draftEscapeRoomGame/MainWindow.cpp", "MU", null ],
 		[ "/home/nasma/draftEscapeRoomGame/gameController.cpp", "MU", null ],
 		[ "/home/nasma/draftEscapeRoomGame/main.cpp", "MU", null ],

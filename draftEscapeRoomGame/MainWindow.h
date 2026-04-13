@@ -2,12 +2,11 @@
 
 #include <QMainWindow>
 #include <QLabel>
-#include <QPushButton>
-#include "gameController.h"
 #include <QTimer>
 #include <QElapsedTimer>
-#include "gameMode.h"
+#include "gameTypes.h"
 
+class GameWorld;
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -18,43 +17,27 @@ public:
     void startGameTimer();
     void updateTimerUI();
 
-    void setGameMode(gameMode m);
+    void startGame(GameMode m);
 
-protected:
-    void resizeEvent(QResizeEvent *event) override;
 
 private:
-    GameController controller;
 
-    //game mode
-    gameMode mode;
+    //GAME MODE
+    GameMode mode;
+
+    //GAME WORLD
+    GameWorld *world;
+
     bool raceStarted = false;
+
+    //TIMERS
+    QTimer *uiTimer;
+    QElapsedTimer gameTimer;
     QElapsedTimer raceStartTime;
 
-    //fake second player
+    //FAKE OPPONENT (RACE MODE ONLY)
     QElapsedTimer fakeOpponentTimer;
     QLabel *opponentLabel;
 
-
-    QLabel *roomLabel;
-    QLabel *overlay;
-
-    QPushButton *leftButton;
-    QPushButton *rightButton;
-    QPushButton *lightButton;
-    QPushButton *laptopButton;
-
-    //timer
-    QTimer *uiTimer;
-    QElapsedTimer gameTimer;
     QLabel *timerLabel;
-
-
-    void updateView();
-
-    void onLeft();
-    void onRight();
-    void onLight();
-    void onLaptop();
 };
-

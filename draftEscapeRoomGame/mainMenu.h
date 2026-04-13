@@ -4,8 +4,8 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QVBoxLayout>
-#include "gameMode.h"
 #include <QResizeEvent>
+#include "gameTypes.h"
 
 class mainMenu : public QWidget {
     Q_OBJECT
@@ -18,7 +18,7 @@ protected:
 
 signals:
 
-    void StartGame(gameMode mode);
+    void StartGame(GameMode mode);
 
 private:
     QLabel *titleLabel;
@@ -29,5 +29,5 @@ private:
 
     bool modeSelected = false;
 
-    gameMode selectedMode;
+    GameMode selectedMode;
 };

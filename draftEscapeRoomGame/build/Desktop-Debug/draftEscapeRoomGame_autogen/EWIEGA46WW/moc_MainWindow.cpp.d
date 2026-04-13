@@ -1,7 +1,6 @@
 /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/moc_MainWindow.cpp: /home/nasma/draftEscapeRoomGame/MainWindow.h \
   /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/moc_predefs.h \
-  /home/nasma/draftEscapeRoomGame/gameController.h \
-  /home/nasma/draftEscapeRoomGame/gameMode.h \
+  /home/nasma/draftEscapeRoomGame/gameTypes.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -401,12 +400,9 @@
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qwindowdefs.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLabel \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlabel.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgets-config.h \

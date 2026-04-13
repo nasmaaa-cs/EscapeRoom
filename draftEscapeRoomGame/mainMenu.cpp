@@ -53,13 +53,13 @@ mainMenu::mainMenu()
     // Logic
     connect(soloButton, &QPushButton::clicked, this, [=]() {
         modeSelected = true;
-        selectedMode = gameMode::SOLO;
+        selectedMode = GameMode::SOLO;
         startButton->show();
     });
 
     connect(raceButton, &QPushButton::clicked, this, [=]() {
         modeSelected = true;
-        selectedMode = gameMode::RACE;
+        selectedMode = GameMode::RACE;
         startButton->show();
     });
 

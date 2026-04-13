@@ -1,5 +1,7 @@
 draftEscapeRoomGame_autogen/timestamp: \
 	/home/nasma/draftEscapeRoomGame/CMakeLists.txt \
+	/home/nasma/draftEscapeRoomGame/GameWorld.cpp \
+	/home/nasma/draftEscapeRoomGame/GameWorld.h \
 	/home/nasma/draftEscapeRoomGame/MainWindow.cpp \
 	/home/nasma/draftEscapeRoomGame/MainWindow.h \
 	/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/.qtc/package-manager/auto-setup.cmake \
@@ -8,7 +10,7 @@ draftEscapeRoomGame_autogen/timestamp: \
 	/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/moc_predefs.h \
 	/home/nasma/draftEscapeRoomGame/gameController.cpp \
 	/home/nasma/draftEscapeRoomGame/gameController.h \
-	/home/nasma/draftEscapeRoomGame/gameMode.h \
+	/home/nasma/draftEscapeRoomGame/gameTypes.h \
 	/home/nasma/draftEscapeRoomGame/main.cpp \
 	/home/nasma/draftEscapeRoomGame/mainMenu.cpp \
 	/home/nasma/draftEscapeRoomGame/mainMenu.h \

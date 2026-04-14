@@ -4,6 +4,7 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QTextEdit>
+#include <QVector>
 
 class LaptopPuzzle : public QWidget
 {
@@ -18,11 +19,15 @@ signals:
 
 private:
     QPushButton *backButton;
-    QTextEdit *terminal;
+    //QTextEdit *terminal;
+
+    QLabel *questionLabel;
+    QVector<QPushButton*> choices;
 
     int currentQuestion = 0;
 
     void setupUI();
-    void loadQuestion(int index);
-    void checkAnswer(QString answer);
+
+    void loadQuestion();
+    void checkAnswer(int index);
 };

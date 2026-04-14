@@ -43,6 +43,7 @@ private:
     //ROOM UI
     QLabel *roomLabel;
     QLabel *overlay;
+    QLabel *messageLabel;
 
     //ROOM BUTTONS
     QPushButton *leftButton;
@@ -57,6 +58,8 @@ private:
     int puzzleStage = 0;
 
     void updateView();
+
+    void showMessage(const QString &msg);
 
     //INPUT HANDLERS
     void onLeft();

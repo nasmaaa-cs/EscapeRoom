@@ -7,6 +7,7 @@
         <file>images/mainMenuBG.png</file>
         <file>images/laptop_closeup.png</file>
         <file>images/front_lp.png</file>
+        <file>left_.png</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>

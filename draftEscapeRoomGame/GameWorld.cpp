@@ -53,12 +53,39 @@ GameWorld::GameWorld(QWidget *parent)
 
     //puzzle solved
     connect(puzzle, &LaptopPuzzle::puzzleSolved, this, [=]() {
-        puzzle->hide();
-        state = GameState::ROOM;
 
-        controller.roomState = RoomState::LIGHT;
-        updateView();
+        messageLabel->setText("Puzzle 1 Completed! Lights are now on");
+        messageLabel->show();
+
+        QTimer::singleShot(2000, this, [=]() {
+            messageLabel->hide();
+        });
+
+        QTimer *flicker = new QTimer(this);
+        int *count = new int(0);
+
+        connect(flicker, &QTimer::timeout, this, [=]() mutable {
+
+            controller.toggleLight();
+            updateView();
+
+            (*count)++;
+
+            if (*count > 5) {
+                flicker->stop();
+                controller.roomState = RoomState::LIGHT;
+                updateView();
+            }
+        });
+
+        flicker->start(200);
     });
+
+    //message when puzzle solved
+    messageLabel = new QLabel(this);
+    messageLabel->setGeometry(20, 100, 300, 50);
+    messageLabel->setStyleSheet("color: white; font-size: 18px; background: rgba(0,0,0,120);");
+    messageLabel->hide();
 
     updateView();
 }
@@ -86,7 +113,7 @@ void GameWorld::updateView()
 
     switch (controller.currentWall) {
     case Wall::FRONT: image = ":/images/images/front_lp.png"; break;
-    case Wall::LEFT:  image = ":/images/images/left.png"; break;
+    case Wall::LEFT:  image = ":/images/left_.png"; break;
     case Wall::RIGHT: image = ":/images/images/right.png"; break;
     case Wall::BACK:  image = ":/images/images/back.png"; break;
     }
@@ -170,4 +197,15 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
         return;
     }
 
+}
+
+//message when puzzle solved
+void GameWorld::showMessage(const QString &msg)
+{
+    messageLabel->setText(msg);
+    messageLabel->show();
+
+    QTimer::singleShot(2000, this, [=]() {
+        messageLabel->hide();
+    });
 }

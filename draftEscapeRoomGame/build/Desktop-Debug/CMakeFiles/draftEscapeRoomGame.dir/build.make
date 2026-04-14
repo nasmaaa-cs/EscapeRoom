@@ -78,6 +78,7 @@ draftEscapeRoomGame_autogen/timestamp: CMakeFiles/draftEscapeRoomGame.dir/compil
 
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/resources.qrc
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: CMakeFiles/draftEscapeRoomGame_autogen.dir/AutoRcc_resources_EWIEGA46WW_Info.json
+draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/left_.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/left.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/back.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/front.png

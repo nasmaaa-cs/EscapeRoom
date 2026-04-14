@@ -8,6 +8,7 @@
 	"INCLUDE_DIR" : "/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/include",
 	"INPUTS" : 
 	[
+		"/home/nasma/draftEscapeRoomGame/left_.png",
 		"/home/nasma/draftEscapeRoomGame/images/left.png",
 		"/home/nasma/draftEscapeRoomGame/images/back.png",
 		"/home/nasma/draftEscapeRoomGame/images/front.png",

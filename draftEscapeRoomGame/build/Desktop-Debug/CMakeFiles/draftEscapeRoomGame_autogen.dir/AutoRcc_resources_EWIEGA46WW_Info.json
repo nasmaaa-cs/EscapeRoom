@@ -11,8 +11,10 @@
 		"/home/nasma/draftEscapeRoomGame/images/left.png",
 		"/home/nasma/draftEscapeRoomGame/images/back.png",
 		"/home/nasma/draftEscapeRoomGame/images/front.png",
+		"/home/nasma/draftEscapeRoomGame/images/laptop_closeup.png",
 		"/home/nasma/draftEscapeRoomGame/images/mainMenuBG.png",
-		"/home/nasma/draftEscapeRoomGame/images/right.png"
+		"/home/nasma/draftEscapeRoomGame/images/right.png",
+		"/home/nasma/draftEscapeRoomGame/images/front_lp.png"
 	],
 	"LOCK_FILE" : "/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/CMakeFiles/draftEscapeRoomGame_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
 	"MULTI_CONFIG" : false,

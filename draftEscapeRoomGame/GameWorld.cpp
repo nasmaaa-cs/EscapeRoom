@@ -2,6 +2,9 @@
 #include <QPixmap>
 #include <QResizeEvent>
 #include <QPushButton>
+#include "LaptopPuzzle.h"
+#include <QTimer>
+#include <QMouseEvent>
 
 // constructor
 GameWorld::GameWorld(QWidget *parent)
@@ -15,31 +18,52 @@ GameWorld::GameWorld(QWidget *parent)
     // Light overlay
     overlay = new QLabel(this);
     overlay->setGeometry(0, 0, 800, 600);
-    overlay->setStyleSheet("background-color: rgba(0,0,0,180);");
+    overlay->setStyleSheet("background-color: rgba(0,0,0,200);");
     overlay->setAttribute(Qt::WA_TransparentForMouseEvents);
 
     // Buttons
     leftButton = new QPushButton("<", this);
     rightButton = new QPushButton(">", this);
-    lightButton = new QPushButton("Light", this);
-    laptopButton = new QPushButton("Laptop", this);
 
     // Position buttons
     leftButton->move(50, 500);
     rightButton->move(700, 500);
-    lightButton->move(350, 20);
-    laptopButton->move(350, 300);
 
     // Connections
     connect(leftButton, &QPushButton::clicked, this, &GameWorld::onLeft);
     connect(rightButton, &QPushButton::clicked, this, &GameWorld::onRight);
-    connect(lightButton, &QPushButton::clicked, this, &GameWorld::onLight);
-    connect(laptopButton, &QPushButton::clicked, this, &GameWorld::onLaptop);
+
+    //laptop clue unlocked
+    laptopMarker = new QLabel(this);
+    laptopMarker->setGeometry(350, 300, 40, 40);
+    laptopMarker->setStyleSheet("background-color: black;");
+    laptopMarker->show();
+
+
+    //laptop puzzle
+    puzzle = new LaptopPuzzle(this);
+    puzzle->hide();
+
+    //go back from puzzle
+    connect(puzzle, &LaptopPuzzle::backToRoom, this, [=]() {
+        puzzle->hide();
+        state = GameState::ROOM;
+        updateView();
+    });
+
+    //puzzle solved
+    connect(puzzle, &LaptopPuzzle::puzzleSolved, this, [=]() {
+        puzzle->hide();
+        state = GameState::ROOM;
+
+        controller.roomState = RoomState::LIGHT;
+        updateView();
+    });
 
     updateView();
 }
 
-//moement
+//movement
 void GameWorld::onLeft()
 {
     controller.goLeft();
@@ -53,17 +77,7 @@ void GameWorld::onRight()
 }
 
 //light
-void GameWorld::onLight()
-{
-    controller.toggleLight();
-    updateView();
-}
 
-//laptop
-void GameWorld::onLaptop()
-{
-    //roomLabel->setStyleSheet("color: white; font-size: 24px;");
-}
 
 //update view
 void GameWorld::updateView()
@@ -71,7 +85,7 @@ void GameWorld::updateView()
     QString image;
 
     switch (controller.currentWall) {
-    case Wall::FRONT: image = ":/images/images/front.png"; break;
+    case Wall::FRONT: image = ":/images/images/front_lp.png"; break;
     case Wall::LEFT:  image = ":/images/images/left.png"; break;
     case Wall::RIGHT: image = ":/images/images/right.png"; break;
     case Wall::BACK:  image = ":/images/images/back.png"; break;
@@ -79,15 +93,21 @@ void GameWorld::updateView()
 
     roomLabel->setPixmap(QPixmap(image));
 
+    //light
     if (controller.roomState == RoomState::DARK)
         overlay->show();
     else
         overlay->hide();
 
-    if (controller.currentWall == Wall::FRONT)
-        laptopButton->show();
+    //shows when puzzle unlocked
+    if (controller.currentWall == Wall::FRONT && puzzleStage == 0)
+        laptopMarker->show();
     else
-        laptopButton->hide();
+        laptopMarker->hide();
+
+    //if (puzzleStage == 1)
+        //doorMarker->show();
+
 }
 
 //game mode
@@ -107,6 +127,47 @@ void GameWorld::resizeEvent(QResizeEvent *event)
 
     leftButton->move(50, height() - 80);
     rightButton->move(width() - 100, height() - 80);
-    lightButton->move(width()/2 - 40, 20);
-    laptopButton->move(width()/2 - 50, height()/2);
+
+    laptopMarker->move(width()/2 - 20, height()/2 -20);
+}
+
+//laptop zoom in
+void GameWorld::mousePressEvent(QMouseEvent *event)
+{
+
+    QWidget::mousePressEvent(event);
+
+
+    if (state == GameState::ROOM)
+    {
+        if (controller.currentWall == Wall::FRONT &&
+            laptopMarker->isVisible() &&
+            laptopMarker->geometry().contains(event->pos()))
+        {
+            state = GameState::LAPTOP_ZOOM;
+
+            roomLabel->setPixmap(QPixmap(":/images/images/laptop_closeup.png"));
+            return;
+        }
+    }
+
+
+    if (state == GameState::LAPTOP_ZOOM)
+    {
+        state = GameState::LAPTOP_TERMINAL;
+
+        puzzle->setGeometry(
+            (width() - 400) / 2,
+            (height() - 300) / 2,
+            400,
+            300
+            );
+
+        puzzle->raise();
+        puzzle->show();
+        puzzle->setFocus();
+
+        return;
+    }
+
 }

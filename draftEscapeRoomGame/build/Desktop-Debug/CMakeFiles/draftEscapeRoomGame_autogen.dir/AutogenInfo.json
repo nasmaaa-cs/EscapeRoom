@@ -216,6 +216,12 @@
 			null
 		],
 		[
+			"/home/nasma/draftEscapeRoomGame/LaptopPuzzle.h",
+			"MU",
+			"EWIEGA46WW/moc_LaptopPuzzle.cpp",
+			null
+		],
+		[
 			"/home/nasma/draftEscapeRoomGame/MainWindow.h",
 			"MU",
 			"EWIEGA46WW/moc_MainWindow.cpp",
@@ -299,6 +305,7 @@
 	"SOURCES" : 
 	[
 		[ "/home/nasma/draftEscapeRoomGame/GameWorld.cpp", "MU", null ],
+		[ "/home/nasma/draftEscapeRoomGame/LaptopPuzzle.cpp", "MU", null ],
 		[ "/home/nasma/draftEscapeRoomGame/MainWindow.cpp", "MU", null ],
 		[ "/home/nasma/draftEscapeRoomGame/gameController.cpp", "MU", null ],
 		[ "/home/nasma/draftEscapeRoomGame/main.cpp", "MU", null ],

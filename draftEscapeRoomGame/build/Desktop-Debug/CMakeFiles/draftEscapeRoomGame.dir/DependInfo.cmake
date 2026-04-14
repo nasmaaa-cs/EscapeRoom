@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "draftEscapeRoomGame_autogen/timestamp" "custom" "draftEscapeRoomGame_autogen/deps"
   "/home/nasma/draftEscapeRoomGame/GameWorld.cpp" "CMakeFiles/draftEscapeRoomGame.dir/GameWorld.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/GameWorld.cpp.o.d"
+  "/home/nasma/draftEscapeRoomGame/LaptopPuzzle.cpp" "CMakeFiles/draftEscapeRoomGame.dir/LaptopPuzzle.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/LaptopPuzzle.cpp.o.d"
   "/home/nasma/draftEscapeRoomGame/MainWindow.cpp" "CMakeFiles/draftEscapeRoomGame.dir/MainWindow.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/MainWindow.cpp.o.d"
   "/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp" "CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp.o.d"
   "/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/mocs_compilation.cpp" "CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/mocs_compilation.cpp.o.d"

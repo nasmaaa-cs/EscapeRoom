@@ -4,6 +4,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QResizeEvent>
+
 #include "gameController.h"
 #include "gameTypes.h"
 
@@ -12,6 +13,8 @@ enum class GameState {
     LAPTOP_ZOOM,
     LAPTOP_TERMINAL
 };
+
+class LaptopPuzzle;
 
 class GameWorld : public QWidget {
     Q_OBJECT
@@ -23,6 +26,8 @@ public:
 
 protected:
     void resizeEvent(QResizeEvent *event) override;
+
+    void mousePressEvent(QMouseEvent *event) override;
 
 private:
     //GAME MODE
@@ -42,14 +47,18 @@ private:
     //ROOM BUTTONS
     QPushButton *leftButton;
     QPushButton *rightButton;
-    QPushButton *lightButton;
-    QPushButton *laptopButton;
+    QLabel *laptopMarker;
+
+    //bool laptopUnlocked = true;
+    //bool laptopSolved = false;
+
+    LaptopPuzzle *puzzle;
+
+    int puzzleStage = 0;
 
     void updateView();
 
     //INPUT HANDLERS
     void onLeft();
     void onRight();
-    void onLight();
-    void onLaptop();
 };

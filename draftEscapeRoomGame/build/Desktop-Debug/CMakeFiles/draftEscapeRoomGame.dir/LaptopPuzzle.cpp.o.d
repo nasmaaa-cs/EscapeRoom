@@ -1,6 +1,6 @@
-CMakeFiles/draftEscapeRoomGame.dir/GameWorld.cpp.o: \
-  /home/nasma/draftEscapeRoomGame/GameWorld.cpp \
-  /home/nasma/draftEscapeRoomGame/GameWorld.h \
+CMakeFiles/draftEscapeRoomGame.dir/LaptopPuzzle.cpp.o: \
+  /home/nasma/draftEscapeRoomGame/LaptopPuzzle.cpp \
+  /home/nasma/draftEscapeRoomGame/LaptopPuzzle.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \
@@ -386,6 +386,9 @@ CMakeFiles/draftEscapeRoomGame.dir/GameWorld.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qcursor.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qbitmap.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLabel \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlabel.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
@@ -393,30 +396,6 @@ CMakeFiles/draftEscapeRoomGame.dir/GameWorld.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevice.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextdocument.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qurl.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/QResizeEvent \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qevent.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreevent.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qpointer.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qeventpoint.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qvector2d.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qvectornd.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpointingdevice.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qinputdevice.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qscreen.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QList \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QRect \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QSize \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QSizeF \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/QTransform \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h \
-  /home/nasma/draftEscapeRoomGame/gameController.h \
-  /home/nasma/draftEscapeRoomGame/gameTypes.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/QPixmap \
-  /home/nasma/draftEscapeRoomGame/LaptopPuzzle.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTextEdit \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtextedit.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractscrollarea.h \
@@ -424,7 +403,8 @@ CMakeFiles/draftEscapeRoomGame.dir/GameWorld.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextcursor.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextformat.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qpen.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimer.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/QMouseEvent
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayout.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h

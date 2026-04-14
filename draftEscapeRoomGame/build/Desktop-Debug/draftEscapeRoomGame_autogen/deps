@@ -2,6 +2,8 @@ draftEscapeRoomGame_autogen/timestamp: \
 	/home/nasma/draftEscapeRoomGame/CMakeLists.txt \
 	/home/nasma/draftEscapeRoomGame/GameWorld.cpp \
 	/home/nasma/draftEscapeRoomGame/GameWorld.h \
+	/home/nasma/draftEscapeRoomGame/LaptopPuzzle.cpp \
+	/home/nasma/draftEscapeRoomGame/LaptopPuzzle.h \
 	/home/nasma/draftEscapeRoomGame/MainWindow.cpp \
 	/home/nasma/draftEscapeRoomGame/MainWindow.h \
 	/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/.qtc/package-manager/auto-setup.cmake \
@@ -412,6 +414,7 @@ draftEscapeRoomGame_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qkeysequence.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qpaintdevice.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qpalette.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtGui/qpen.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qpicture.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qpixelformat.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qpixmap.h \
@@ -421,7 +424,10 @@ draftEscapeRoomGame_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qrgb.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qrgba64.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qscreen.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtextcursor.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtextdocument.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtextformat.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtextoption.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtgui-config.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiexports.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiglobal.h \
@@ -432,9 +438,11 @@ draftEscapeRoomGame_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLabel \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTextEdit \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractscrollarea.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
@@ -445,6 +453,7 @@ draftEscapeRoomGame_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtextedit.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgets-config.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsexports.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \

@@ -427,6 +427,12 @@ CMakeFiles/draftEscapeRoomGame.dir/main.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QSize \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QSizeF \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QTransform \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLineEdit \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlineedit.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextcursor.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextformat.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpen.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextoption.h \
   /home/nasma/draftEscapeRoomGame/gameTypes.h \
   /home/nasma/draftEscapeRoomGame/MainWindow.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \

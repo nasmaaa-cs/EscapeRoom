@@ -443,4 +443,6 @@ CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/mocs_compilation.
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayout.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLineEdit \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlineedit.h

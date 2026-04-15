@@ -24,6 +24,10 @@ public:
 
     void setGameMode(GameMode m);
 
+
+signals:
+    //void puzzleCompleted(int puzzleNumber);
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
 

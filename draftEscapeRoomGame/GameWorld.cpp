@@ -54,8 +54,13 @@ GameWorld::GameWorld(QWidget *parent)
     //puzzle solved
     connect(puzzle, &LaptopPuzzle::puzzleSolved, this, [=]() {
 
-        messageLabel->setText("Puzzle 1 Completed! Lights are now on");
+        puzzleStage = 1;
+
+        messageLabel->setText("Puzzle 1 Completed! Lights on");
         messageLabel->show();
+
+        //emit puzzleCompleted(1);
+
 
         QTimer::singleShot(2000, this, [=]() {
             messageLabel->hide();

@@ -18,12 +18,17 @@ public:
     void updateTimerUI();
 
     void startGame(GameMode m);
+    void setPlayerName(QString name);
 
 
 private:
 
     //GAME MODE
     GameMode mode;
+
+    //PlAYER NAME
+    QString playerName;
+
 
     //GAME WORLD
     GameWorld *world;

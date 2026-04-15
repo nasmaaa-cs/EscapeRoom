@@ -438,6 +438,7 @@ draftEscapeRoomGame_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qvectornd.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qwindowdefs.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLabel \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLineEdit \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTextEdit \
@@ -451,6 +452,7 @@ draftEscapeRoomGame_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlabel.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayout.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlineedit.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \

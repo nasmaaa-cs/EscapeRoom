@@ -20,6 +20,14 @@ mainMenu::mainMenu()
         "background-color: rgba(0,0,0,150); color: white; padding: 10px;"
         );
 
+    //Name Box
+    nameInput = new QLineEdit();
+    nameInput->setPlaceholderText("Enter your name");
+
+    nameInput->setStyleSheet(
+        "background-color: rgba(0,0,0,150); color: white; padding: 10px;"
+        );
+
     soloButton = new QPushButton("Play Solo");
     raceButton = new QPushButton("Race Mode");
     startButton = new QPushButton("Start");
@@ -29,6 +37,11 @@ mainMenu::mainMenu()
     raceButton->setStyleSheet(
         "background-color: rgba(0,0,0,150); color: white; padding: 10px;"
         );
+    soloButton->setFixedSize(200, 50);
+    raceButton->setFixedSize(200, 50);
+    startButton->setFixedSize(200, 50);
+    nameInput->setFixedSize(250, 40);
+
 
     startButton->hide();
 
@@ -39,10 +52,13 @@ mainMenu::mainMenu()
     layout->addWidget(titleLabel);
     layout->addSpacing(40);
 
-    layout->addWidget(soloButton);
-    layout->addWidget(raceButton);
+    layout->addWidget(nameInput, 0, Qt::AlignCenter);
+    layout->addWidget(soloButton, 0, Qt::AlignCenter);
+    layout->addWidget(raceButton, 0, Qt::AlignCenter);
+    layout->addWidget(startButton, 0, Qt::AlignCenter);
+
     layout->addSpacing(20);
-    layout->addWidget(startButton);
+
 
     layout->addStretch();
 
@@ -64,7 +80,13 @@ mainMenu::mainMenu()
     });
 
     connect(startButton, &QPushButton::clicked, this, [=]() {
-        emit StartGame(selectedMode);
+
+        if (nameInput->text().isEmpty()) {
+            nameInput->setPlaceholderText("Please enter your name!");
+            return;
+        }
+
+        emit StartGame(selectedMode, nameInput->text());
     });
 }
 void mainMenu::resizeEvent(QResizeEvent *event)

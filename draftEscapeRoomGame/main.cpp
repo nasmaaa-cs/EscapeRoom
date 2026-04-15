@@ -12,8 +12,9 @@ int main(int argc, char *argv[])
 
     menu.show();
 
-    QObject::connect(&menu, &mainMenu::StartGame, [&](GameMode mode) {
+    QObject::connect(&menu, &mainMenu::StartGame, [&](GameMode mode, QString name) {
         MainWindow *game = new MainWindow();
+        game->setPlayerName(name);
         game->startGame(mode);
         game->showMaximized();
         menu.close();

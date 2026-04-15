@@ -5,6 +5,8 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QResizeEvent>
+#include <QLineEdit>
+
 #include "gameTypes.h"
 
 class mainMenu : public QWidget {
@@ -18,7 +20,7 @@ protected:
 
 signals:
 
-    void StartGame(GameMode mode);
+    void StartGame(GameMode mode, QString playerName);
 
 private:
     QLabel *titleLabel;
@@ -26,6 +28,8 @@ private:
     QPushButton *raceButton;
     QPushButton *startButton;
     QLabel *background;
+
+    QLineEdit *nameInput;
 
     bool modeSelected = false;
 

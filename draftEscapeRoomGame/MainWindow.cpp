@@ -94,3 +94,8 @@ void MainWindow::updateTimerUI()
             .arg(os, 2, 10, QChar('0'))
         );
 }
+
+void MainWindow::setPlayerName(QString name)
+{
+    playerName = name;
+}

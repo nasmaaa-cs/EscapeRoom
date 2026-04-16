@@ -2,7 +2,11 @@
 #include <QPixmap>
 #include <QResizeEvent>
 #include <QPushButton>
+
 #include "LaptopPuzzle.h"
+#include "PrisonPuzzle.h"
+
+
 #include <QTimer>
 #include <QMouseEvent>
 
@@ -14,6 +18,7 @@ GameWorld::GameWorld(QWidget *parent)
     roomLabel = new QLabel(this);
     roomLabel->setGeometry(0, 0, 800, 600);
     roomLabel->setScaledContents(true);
+    roomLabel->setAttribute(Qt::WA_TransparentForMouseEvents);
 
     // Light overlay
     overlay = new QLabel(this);
@@ -39,44 +44,65 @@ GameWorld::GameWorld(QWidget *parent)
     laptopMarker->setStyleSheet("background-color: black;");
     laptopMarker->show();
 
+    //prisom clue unlocked
+    prisonMarker = new QLabel(this);
+    prisonMarker->setGeometry(350, 300, 40, 40);
+    prisonMarker->setStyleSheet("background-color: black;");
+    prisonMarker->hide();
+
+    prisonMarker->raise();
+    prisonMarker->setAttribute(Qt::WA_TransparentForMouseEvents, true);
 
     //laptop puzzle
     puzzle = new LaptopPuzzle(this);
     puzzle->hide();
 
-    //go back from puzzle
+    //prison puzzle
+    puzzle2 = new PrisonPuzzle(this);
+    puzzle2->hide();
+
+
+    //go back from laptop puzzle
     connect(puzzle, &LaptopPuzzle::backToRoom, this, [=]() {
         puzzle->hide();
         state = GameState::ROOM;
         updateView();
     });
 
-    //puzzle solved
+    //go back from prison puzzle
+    connect(puzzle2, &PrisonPuzzle::backToRoom, this, [=]() {
+        puzzle2->hide();
+        state = GameState::ROOM;
+        updateView();
+    });
+
+    //laptop puzzle solved
     connect(puzzle, &LaptopPuzzle::puzzleSolved, this, [=]() {
 
-        puzzleStage = 1;
+        puzzleStage++;
+        state = GameState::ROOM;
+        puzzle->hide();
 
         messageLabel->setText("Puzzle 1 Completed! Lights on");
+        messageLabel->setWordWrap(true);
         messageLabel->show();
-
-        //emit puzzleCompleted(1);
-
 
         QTimer::singleShot(2000, this, [=]() {
             messageLabel->hide();
         });
 
+
         QTimer *flicker = new QTimer(this);
-        int *count = new int(0);
+        int count = 0;
 
         connect(flicker, &QTimer::timeout, this, [=]() mutable {
 
             controller.toggleLight();
             updateView();
 
-            (*count)++;
+            count++;
 
-            if (*count > 5) {
+            if (count > 5) {
                 flicker->stop();
                 controller.roomState = RoomState::LIGHT;
                 updateView();
@@ -85,6 +111,28 @@ GameWorld::GameWorld(QWidget *parent)
 
         flicker->start(200);
     });
+//prison puzzle solved
+    connect(puzzle2, &PrisonPuzzle::puzzleSolved, this, [=]() {
+
+        state = GameState::ROOM;
+        puzzleStage++;
+
+        puzzle2->hide();
+
+        messageLabel->setText("Puzzle 2 Completed! Prison Unlocked");
+        messageLabel->setWordWrap(true);
+        messageLabel->show();
+
+        QTimer::singleShot(2000, this, [=]() {
+            messageLabel->hide();
+        });
+
+
+        prisonMarker->hide();
+
+        updateView();
+    });
+
 
     //message when puzzle solved
     messageLabel = new QLabel(this);
@@ -108,8 +156,6 @@ void GameWorld::onRight()
     updateView();
 }
 
-//light
-
 
 //update view
 void GameWorld::updateView()
@@ -118,7 +164,14 @@ void GameWorld::updateView()
 
     switch (controller.currentWall) {
     case Wall::FRONT: image = ":/images/images/front_lp.png"; break;
-    case Wall::LEFT:  image = ":/images/left_.png"; break;
+
+    case Wall::LEFT:
+        if(puzzleStage <2)
+            image = ":/images/images/left_.png";
+        else
+            image = ":/images/images/left.png";
+        break;
+
     case Wall::RIGHT: image = ":/images/images/right.png"; break;
     case Wall::BACK:  image = ":/images/images/back.png"; break;
     }
@@ -131,14 +184,17 @@ void GameWorld::updateView()
     else
         overlay->hide();
 
-    //shows when puzzle unlocked
+    //shows when laptop puzzle unlocked
     if (controller.currentWall == Wall::FRONT && puzzleStage == 0)
         laptopMarker->show();
     else
         laptopMarker->hide();
 
-    //if (puzzleStage == 1)
-        //doorMarker->show();
+    //shows when prison puzzle unlocked
+        if (controller.currentWall == Wall::LEFT && puzzleStage == 1)
+        prisonMarker->show();
+    else
+        prisonMarker->hide();
 
 }
 
@@ -161,40 +217,35 @@ void GameWorld::resizeEvent(QResizeEvent *event)
     rightButton->move(width() - 100, height() - 80);
 
     laptopMarker->move(width()/2 - 20, height()/2 -20);
+
+    int x = width()/2 + 80;
+    int y = height()/2 + 60;
+
+    prisonMarker->setGeometry( x, y, 40, 40);
 }
 
-//laptop zoom in
+//zoom in
 void GameWorld::mousePressEvent(QMouseEvent *event)
 {
 
     QWidget::mousePressEvent(event);
 
-
-    if (state == GameState::ROOM)
+    // laptop
+    if (state == GameState::ROOM &&
+        controller.currentWall == Wall::FRONT &&
+        laptopMarker->isVisible() &&
+        laptopMarker->geometry().contains(event->pos()))
     {
-        if (controller.currentWall == Wall::FRONT &&
-            laptopMarker->isVisible() &&
-            laptopMarker->geometry().contains(event->pos()))
-        {
-            state = GameState::LAPTOP_ZOOM;
-
-            roomLabel->setPixmap(QPixmap(":/images/images/laptop_closeup.png"));
-            return;
-        }
+        state = GameState::LAPTOP_ZOOM;
+        roomLabel->setPixmap(QPixmap(":/images/images/laptop_closeup.png"));
+        return;
     }
-
 
     if (state == GameState::LAPTOP_ZOOM)
     {
         state = GameState::LAPTOP_TERMINAL;
 
-        puzzle->setGeometry(
-            (width() - 400) / 2,
-            (height() - 300) / 2,
-            400,
-            300
-            );
-
+        puzzle->setGeometry((width() - 400)/2, (height() - 300)/2, 400, 300);
         puzzle->raise();
         puzzle->show();
         puzzle->setFocus();
@@ -202,6 +253,29 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
         return;
     }
 
+    // prison
+
+    if (state == GameState::ROOM &&
+        controller.currentWall == Wall::LEFT &&
+        prisonMarker->isVisible() &&
+        prisonMarker->geometry().contains(event->pos()))
+    {
+        state = GameState::PRISON_ZOOM;
+        roomLabel->setPixmap(QPixmap(":/images/images/prison_closeup_.png"));
+        return;
+    }
+
+    if (state == GameState::PRISON_ZOOM)
+    {
+        state = GameState::PRISON_TERMINAL;
+
+        puzzle2->setGeometry((width() - 400)/2, (height() - 300)/2, 400, 300);
+        puzzle2->raise();
+        puzzle2->show();
+        puzzle2->setFocus();
+
+        return;
+    }
 }
 
 //message when puzzle solved

@@ -2,4 +2,5 @@
 #include "EWIEGA46WW/moc_GameWorld.cpp"
 #include "EWIEGA46WW/moc_LaptopPuzzle.cpp"
 #include "EWIEGA46WW/moc_MainWindow.cpp"
+#include "EWIEGA46WW/moc_PrisonPuzzle.cpp"
 #include "EWIEGA46WW/moc_mainMenu.cpp"

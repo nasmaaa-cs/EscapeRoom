@@ -6,6 +6,8 @@ draftEscapeRoomGame_autogen/timestamp: \
 	/home/nasma/draftEscapeRoomGame/LaptopPuzzle.h \
 	/home/nasma/draftEscapeRoomGame/MainWindow.cpp \
 	/home/nasma/draftEscapeRoomGame/MainWindow.h \
+	/home/nasma/draftEscapeRoomGame/PrisonPuzzle.cpp \
+	/home/nasma/draftEscapeRoomGame/PrisonPuzzle.h \
 	/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/.qtc/package-manager/auto-setup.cmake \
 	/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/CMakeFiles/3.28.3/CMakeCXXCompiler.cmake \
 	/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/CMakeFiles/3.28.3/CMakeSystem.cmake \

@@ -11,10 +11,13 @@
 enum class GameState {
     ROOM,
     LAPTOP_ZOOM,
-    LAPTOP_TERMINAL
+    LAPTOP_TERMINAL,
+    PRISON_ZOOM,
+    PRISON_TERMINAL
 };
 
 class LaptopPuzzle;
+class PrisonPuzzle;
 
 class GameWorld : public QWidget {
     Q_OBJECT
@@ -52,12 +55,16 @@ private:
     //ROOM BUTTONS
     QPushButton *leftButton;
     QPushButton *rightButton;
-    QLabel *laptopMarker;
+
+    //marker for puzzles
+    QLabel *laptopMarker;//for laptop puzzle
+    QLabel *prisonMarker;//for prison puzzle
 
     //bool laptopUnlocked = true;
     //bool laptopSolved = false;
 
     LaptopPuzzle *puzzle;
+    PrisonPuzzle *puzzle2;
 
     int puzzleStage = 0;
 

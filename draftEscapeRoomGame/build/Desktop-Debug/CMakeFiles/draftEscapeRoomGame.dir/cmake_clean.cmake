@@ -8,6 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/draftEscapeRoomGame.dir/LaptopPuzzle.cpp.o.d"
   "CMakeFiles/draftEscapeRoomGame.dir/MainWindow.cpp.o"
   "CMakeFiles/draftEscapeRoomGame.dir/MainWindow.cpp.o.d"
+  "CMakeFiles/draftEscapeRoomGame.dir/PrisonPuzzle.cpp.o"
+  "CMakeFiles/draftEscapeRoomGame.dir/PrisonPuzzle.cpp.o.d"
   "CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp.o"
   "CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp.o.d"
   "CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/mocs_compilation.cpp.o"

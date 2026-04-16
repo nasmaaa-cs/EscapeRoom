@@ -228,6 +228,12 @@
 			null
 		],
 		[
+			"/home/nasma/draftEscapeRoomGame/PrisonPuzzle.h",
+			"MU",
+			"EWIEGA46WW/moc_PrisonPuzzle.cpp",
+			null
+		],
+		[
 			"/home/nasma/draftEscapeRoomGame/gameController.h",
 			"MU",
 			"EWIEGA46WW/moc_gameController.cpp",
@@ -307,6 +313,7 @@
 		[ "/home/nasma/draftEscapeRoomGame/GameWorld.cpp", "MU", null ],
 		[ "/home/nasma/draftEscapeRoomGame/LaptopPuzzle.cpp", "MU", null ],
 		[ "/home/nasma/draftEscapeRoomGame/MainWindow.cpp", "MU", null ],
+		[ "/home/nasma/draftEscapeRoomGame/PrisonPuzzle.cpp", "MU", null ],
 		[ "/home/nasma/draftEscapeRoomGame/gameController.cpp", "MU", null ],
 		[ "/home/nasma/draftEscapeRoomGame/main.cpp", "MU", null ],
 		[ "/home/nasma/draftEscapeRoomGame/mainMenu.cpp", "MU", null ]

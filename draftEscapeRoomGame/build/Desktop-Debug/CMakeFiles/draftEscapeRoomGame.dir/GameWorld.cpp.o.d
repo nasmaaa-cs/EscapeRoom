@@ -427,6 +427,7 @@ CMakeFiles/draftEscapeRoomGame.dir/GameWorld.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QVector \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qvector.h \
   /home/nasma/draftEscapeRoomGame/PrisonPuzzle.h \
+  /home/nasma/draftEscapeRoomGame/GirlPuzzle.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimer.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \

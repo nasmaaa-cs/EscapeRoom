@@ -2,6 +2,8 @@ draftEscapeRoomGame_autogen/timestamp: \
 	/home/nasma/draftEscapeRoomGame/CMakeLists.txt \
 	/home/nasma/draftEscapeRoomGame/GameWorld.cpp \
 	/home/nasma/draftEscapeRoomGame/GameWorld.h \
+	/home/nasma/draftEscapeRoomGame/GirlPuzzle.cpp \
+	/home/nasma/draftEscapeRoomGame/GirlPuzzle.h \
 	/home/nasma/draftEscapeRoomGame/LaptopPuzzle.cpp \
 	/home/nasma/draftEscapeRoomGame/LaptopPuzzle.h \
 	/home/nasma/draftEscapeRoomGame/MainWindow.cpp \

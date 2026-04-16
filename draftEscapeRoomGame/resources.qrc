@@ -10,6 +10,8 @@
         <file>images/prison_closeup_.png</file>
         <file>images/left_.png</file>
         <file>images/prison_closeup.png</file>
+        <file>images/girl_wave.png</file>
+        <file>images/girl_hand.png</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>

@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-a0fea53b855826c0a9c0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "draftEscapeRoomGame",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "draftEscapeRoomGame::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-draftEscapeRoomGame-Debug-3d2337a6dfcc0d3f193e.json",
+					"name" : "draftEscapeRoomGame",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "draftEscapeRoomGame_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-draftEscapeRoomGame_autogen-Debug-a360a6a011731f9e51bd.json",
+					"name" : "draftEscapeRoomGame_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "draftEscapeRoomGame_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-draftEscapeRoomGame_autogen_timestamp_deps-Debug-9dcb9892c902d19138b6.json",
+					"name" : "draftEscapeRoomGame_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/nasma/draftEscapeRoomGame/build/Desktop-Debug",
+		"source" : "/home/nasma/draftEscapeRoomGame"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

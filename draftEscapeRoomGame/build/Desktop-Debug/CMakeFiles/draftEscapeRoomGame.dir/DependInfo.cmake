@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "draftEscapeRoomGame_autogen/timestamp" "custom" "draftEscapeRoomGame_autogen/deps"
   "/home/nasma/draftEscapeRoomGame/GameWorld.cpp" "CMakeFiles/draftEscapeRoomGame.dir/GameWorld.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/GameWorld.cpp.o.d"
+  "/home/nasma/draftEscapeRoomGame/GirlPuzzle.cpp" "CMakeFiles/draftEscapeRoomGame.dir/GirlPuzzle.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/GirlPuzzle.cpp.o.d"
   "/home/nasma/draftEscapeRoomGame/LaptopPuzzle.cpp" "CMakeFiles/draftEscapeRoomGame.dir/LaptopPuzzle.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/LaptopPuzzle.cpp.o.d"
   "/home/nasma/draftEscapeRoomGame/MainWindow.cpp" "CMakeFiles/draftEscapeRoomGame.dir/MainWindow.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/MainWindow.cpp.o.d"
   "/home/nasma/draftEscapeRoomGame/PrisonPuzzle.cpp" "CMakeFiles/draftEscapeRoomGame.dir/PrisonPuzzle.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/PrisonPuzzle.cpp.o.d"

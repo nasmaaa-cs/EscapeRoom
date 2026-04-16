@@ -5,6 +5,7 @@
 
 #include "LaptopPuzzle.h"
 #include "PrisonPuzzle.h"
+#include "GirlPuzzle.h"
 
 
 #include <QTimer>
@@ -25,8 +26,6 @@ GameWorld::GameWorld(QWidget *parent)
     effectOverlay->setGeometry(0, 0, 800, 600);
     //effectOverlay->setPixmap(QPixmap(":/images/vhs_filter.png"));
 
-    // CRITICAL: This allows clicks to pass through the "glass"
-    // so you can still click your puzzle markers!
     effectOverlay->setAttribute(Qt::WA_TransparentForMouseEvents);
     effectOverlay->setScaledContents(true);
 
@@ -54,11 +53,20 @@ GameWorld::GameWorld(QWidget *parent)
     laptopMarker->setStyleSheet("background-color: black;");
     laptopMarker->show();
 
-    //prisom clue unlocked
+    //prison clue unlocked
     prisonMarker = new QLabel(this);
     prisonMarker->setGeometry(350, 300, 40, 40);
     prisonMarker->setStyleSheet("background-color: black;");
     prisonMarker->hide();
+
+    prisonMarker->raise();
+    prisonMarker->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+
+    //girl clue unlocked
+    girlMarker = new QLabel(this);
+    girlMarker->setGeometry(350, 300, 40, 40);
+    girlMarker->setStyleSheet("background-color: black;");
+    girlMarker->hide();
 
     prisonMarker->raise();
     prisonMarker->setAttribute(Qt::WA_TransparentForMouseEvents, true);
@@ -71,6 +79,10 @@ GameWorld::GameWorld(QWidget *parent)
     puzzle2 = new PrisonPuzzle(this);
     puzzle2->hide();
 
+    //girl puzzle
+    puzzle3 = new GirlPuzzle(this);
+    puzzle3->hide();
+
 
     //go back from laptop puzzle
     connect(puzzle, &LaptopPuzzle::backToRoom, this, [=]() {
@@ -82,6 +94,13 @@ GameWorld::GameWorld(QWidget *parent)
     //go back from prison puzzle
     connect(puzzle2, &PrisonPuzzle::backToRoom, this, [=]() {
         puzzle2->hide();
+        state = GameState::ROOM;
+        updateView();
+    });
+
+    //go back from girl puzzle
+    connect(puzzle3, &GirlPuzzle::backToRoom, this, [=]() {
+        puzzle3->hide();
         state = GameState::ROOM;
         updateView();
     });
@@ -121,7 +140,7 @@ GameWorld::GameWorld(QWidget *parent)
 
         flicker->start(200);
     });
-//prison puzzle solved
+    //prison puzzle solved
     connect(puzzle2, &PrisonPuzzle::puzzleSolved, this, [=]() {
 
         state = GameState::ROOM;
@@ -139,6 +158,28 @@ GameWorld::GameWorld(QWidget *parent)
 
 
         prisonMarker->hide();
+
+        updateView();
+    });
+
+    //girl puzzle solved
+    connect(puzzle3, &GirlPuzzle::puzzleSolved, this, [=]() {
+
+        state = GameState::ROOM;
+        puzzleStage++;
+
+        puzzle3->hide();
+
+        messageLabel->setText("Puzzle 3 Completed!");
+        messageLabel->setWordWrap(true);
+        messageLabel->show();
+
+        QTimer::singleShot(2000, this, [=]() {
+            messageLabel->hide();
+        });
+
+
+        girlMarker->hide();
 
         updateView();
     });
@@ -189,6 +230,7 @@ void GameWorld::updateView()
             image = ":/images/images/left_.png";
         else
             image = ":/images/images/left.png";
+
         break;
 
     case Wall::RIGHT: image = ":/images/images/right.png"; break;
@@ -214,6 +256,12 @@ void GameWorld::updateView()
         prisonMarker->show();
     else
         prisonMarker->hide();
+
+    //shows when girl puzzle unlocked
+    if (controller.currentWall == Wall::LEFT && puzzleStage == 2)
+        girlMarker->show();
+    else
+        girlMarker->hide();
 
 }
 
@@ -241,6 +289,8 @@ void GameWorld::resizeEvent(QResizeEvent *event)
     int y = height()/2 + 60;
 
     prisonMarker->setGeometry( x, y, 40, 40);
+
+    girlMarker->move(width()/2 - 20, height()/2 -20);
 }
 
 //zoom in
@@ -295,6 +345,51 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
 
         return;
     }
+
+    // girl
+
+    if (state == GameState::ROOM &&
+        controller.currentWall == Wall::LEFT &&
+        girlMarker->isVisible() &&
+        girlMarker->geometry().contains(event->pos()))
+    {
+        state = GameState::GIRL_ZOOM;
+        roomLabel->setPixmap(QPixmap(":/images/images/girl_wave.png"));
+
+        typeMessage("Thank you for helping me...", 50);
+
+        return;
+    }
+
+    if (state == GameState::GIRL_ZOOM)
+    {
+        state = GameState::GIRL_ZOOM2;
+        roomLabel->setPixmap(QPixmap(":/images/images/girl_hand.png"));
+
+        typeMessage("I can help you get out,"
+                    "but I don't have permission to edit the files. "
+                    , 50);
+
+        return;
+    }
+
+    if (state == GameState::GIRL_ZOOM2)
+    {
+        state = GameState::GIRL_ZOOM3;
+        roomLabel->setPixmap(QPixmap(":/images/images/girl_hand.png"));
+
+        typeMessage("I don't have permission to read, write, or execute... Can you give me access?", 50);
+
+        puzzle3->setGeometry((width() - 400)/2, (height() - 300)/2, 400, 300);
+        puzzle3->raise();
+        puzzle3->show();
+        puzzle3->setFocus();
+
+
+        return;
+    }
+
+
 }
 
 //message when puzzle solved
@@ -347,4 +442,33 @@ void GameWorld::triggerGlitchShake(int durationMs, int intensity)
         }
     });
     shakeTimer->start(20);
+}
+
+//typing effect
+void GameWorld::typeMessage(const QString &fullText, int speedMs)
+{
+    messageLabel->setText("");
+    messageLabel->show();
+
+
+    static int charIndex = 0;
+    charIndex = 0;
+
+    QTimer *typeTimer = new QTimer(this);
+
+    connect(typeTimer, &QTimer::timeout, this, [=]() mutable {
+        if (charIndex < fullText.length()) {
+            messageLabel->setText(fullText.left(charIndex + 1));
+            charIndex++;
+
+        } else {
+            typeTimer->stop();
+            typeTimer->deleteLater();
+
+
+            QTimer::singleShot(3000, messageLabel, &QLabel::hide);
+        }
+    });
+
+    typeTimer->start(speedMs); // Lower is faster
 }

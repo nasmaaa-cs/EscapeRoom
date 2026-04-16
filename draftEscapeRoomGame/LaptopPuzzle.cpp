@@ -1,5 +1,6 @@
 #include "LaptopPuzzle.h"
 #include <QVBoxLayout>
+#include <QTimer>
 
 LaptopPuzzle::LaptopPuzzle(QWidget *parent)
     : QWidget(parent)
@@ -87,7 +88,17 @@ void LaptopPuzzle::checkAnswer(int index)
     case 3: correct = (index == 0); break;
     }
 
-    if (!correct) return;
+    if (!correct) {
+        emit wrongAnswer();
+
+        // Optional: Make the button flash red so they know which one was wrong
+        choices[index]->setStyleSheet("background-color: #550000; color: #ff0000;");
+        QTimer::singleShot(200, this, [=]() {
+            choices[index]->setStyleSheet("background-color: black; color: #00ff00;");
+        });
+
+        return;
+    }
 
     currentQuestion++;
 

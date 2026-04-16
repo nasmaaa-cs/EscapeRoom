@@ -13,9 +13,13 @@ class PrisonPuzzle : public QWidget
 public:
     explicit PrisonPuzzle(QWidget *parent = nullptr);
 
+protected:
+    bool eventFilter(QObject *obj, QEvent *event) override;
+
 signals:
     void puzzleSolved();
     void backToRoom();
+    void wrongAnswer();
 
 private:
     QPushButton *backButton;

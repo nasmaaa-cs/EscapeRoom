@@ -16,7 +16,8 @@
 		"/home/nasma/draftEscapeRoomGame/images/left_.png",
 		"/home/nasma/draftEscapeRoomGame/images/right.png",
 		"/home/nasma/draftEscapeRoomGame/images/front_lp.png",
-		"/home/nasma/draftEscapeRoomGame/images/prison_closeup_.png"
+		"/home/nasma/draftEscapeRoomGame/images/prison_closeup_.png",
+		"/home/nasma/draftEscapeRoomGame/images/prison_closeup.png"
 	],
 	"LOCK_FILE" : "/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/CMakeFiles/draftEscapeRoomGame_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
 	"MULTI_CONFIG" : false,

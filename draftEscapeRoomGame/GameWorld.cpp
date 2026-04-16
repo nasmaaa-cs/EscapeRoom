@@ -20,6 +20,16 @@ GameWorld::GameWorld(QWidget *parent)
     roomLabel->setScaledContents(true);
     roomLabel->setAttribute(Qt::WA_TransparentForMouseEvents);
 
+    // Create the effect layer
+    effectOverlay = new QLabel(this);
+    effectOverlay->setGeometry(0, 0, 800, 600);
+    //effectOverlay->setPixmap(QPixmap(":/images/vhs_filter.png"));
+
+    // CRITICAL: This allows clicks to pass through the "glass"
+    // so you can still click your puzzle markers!
+    effectOverlay->setAttribute(Qt::WA_TransparentForMouseEvents);
+    effectOverlay->setScaledContents(true);
+
     // Light overlay
     overlay = new QLabel(this);
     overlay->setGeometry(0, 0, 800, 600);
@@ -133,6 +143,15 @@ GameWorld::GameWorld(QWidget *parent)
         updateView();
     });
 
+    //wrong answer
+\
+    connect(puzzle, &LaptopPuzzle::wrongAnswer, this, [=]() {
+        triggerGlitchShake(300, 10); // Shake for 300ms with 10px intensity
+    });
+
+    connect(puzzle2, &PrisonPuzzle::wrongAnswer, this, [=]() {
+        triggerGlitchShake(300, 10); // Shake for 300ms with 10px intensity
+    });
 
     //message when puzzle solved
     messageLabel = new QLabel(this);
@@ -261,7 +280,7 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
         prisonMarker->geometry().contains(event->pos()))
     {
         state = GameState::PRISON_ZOOM;
-        roomLabel->setPixmap(QPixmap(":/images/images/prison_closeup_.png"));
+        roomLabel->setPixmap(QPixmap(":/images/images/prison_closeup.png"));
         return;
     }
 
@@ -287,4 +306,45 @@ void GameWorld::showMessage(const QString &msg)
     QTimer::singleShot(2000, this, [=]() {
         messageLabel->hide();
     });
+}
+
+//effect
+void GameWorld::triggerGlitchShake(int durationMs, int intensity)
+{
+    // Determine what is currently "in front"
+    QWidget* activePuzzle = nullptr;
+    if (state == GameState::LAPTOP_TERMINAL) activePuzzle = puzzle;
+    else if (state == GameState::PRISON_TERMINAL) activePuzzle = puzzle2;
+
+    // Store original positions so we can reset accurately
+    QPoint roomOldPos = roomLabel->pos();
+    QPoint puzzleOldPos = activePuzzle ? activePuzzle->pos() : QPoint(0,0);
+
+    QTimer* shakeTimer = new QTimer(this);
+    int elapsed = 0;
+
+    connect(shakeTimer, &QTimer::timeout, this, [=]() mutable {
+        if (elapsed < durationMs) {
+            int dx = (std::rand() % (intensity * 2)) - intensity;
+            int dy = (std::rand() % (intensity * 2)) - intensity;
+
+            // Shake the background
+            roomLabel->move(roomOldPos.x() + dx, roomOldPos.y() + dy);
+
+            // Shake the puzzle if it's open!
+            if (activePuzzle) {
+                activePuzzle->move(puzzleOldPos.x() + dx, puzzleOldPos.y() + dy);
+            }
+
+            elapsed += 20;
+        } else {
+            // Reset everything
+            roomLabel->move(roomOldPos);
+            if (activePuzzle) activePuzzle->move(puzzleOldPos);
+
+            shakeTimer->stop();
+            shakeTimer->deleteLater();
+        }
+    });
+    shakeTimer->start(20);
 }

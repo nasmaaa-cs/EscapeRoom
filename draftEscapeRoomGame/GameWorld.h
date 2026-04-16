@@ -26,6 +26,8 @@ public:
     explicit GameWorld(QWidget *parent = nullptr);
 
     void setGameMode(GameMode m);
+    void triggerGlitchShake(int durationMs, int intensity);
+
 
 
 signals:
@@ -51,6 +53,7 @@ private:
     QLabel *roomLabel;
     QLabel *overlay;
     QLabel *messageLabel;
+    QLabel *effectOverlay;
 
     //ROOM BUTTONS
     QPushButton *leftButton;

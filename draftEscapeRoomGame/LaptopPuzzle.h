@@ -16,6 +16,7 @@ public:
 signals:
     void puzzleSolved();
     void backToRoom();
+    void wrongAnswer();
 
 private:
     QPushButton *backButton;

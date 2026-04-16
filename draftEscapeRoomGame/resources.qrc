@@ -9,6 +9,7 @@
         <file>images/front_lp.png</file>
         <file>images/prison_closeup_.png</file>
         <file>images/left_.png</file>
+        <file>images/prison_closeup.png</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>

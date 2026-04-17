@@ -32,30 +32,36 @@ GameWorld::GameWorld(QWidget *parent)
     glitchOverlay->setGeometry(0, 0, 800, 600);
     glitchOverlay->setScaledContents(true);
     glitchOverlay->setAttribute(Qt::WA_TransparentForMouseEvents);
-
     QGraphicsOpacityEffect *opacityEffect = new QGraphicsOpacityEffect(this);
     opacityEffect->setOpacity(0.4);
     glitchOverlay->setGraphicsEffect(opacityEffect);
-
     glitchMovie = new QMovie(":/images/images/glitchy_cam.gif");
     glitchOverlay->setMovie(glitchMovie);
     glitchMovie->start();
-
     glitchOverlay->raise();
 
     //Cam layer
     effectOverlay = new QLabel(this);
     effectOverlay->setGeometry(0, 0, 800, 600);
     effectOverlay->setPixmap(QPixmap(":/images/images/camera.png"));
-
     QGraphicsOpacityEffect *opacity = new QGraphicsOpacityEffect(this);
     opacity->setOpacity(0.8);
     effectOverlay->setGraphicsEffect(opacity);
-
     effectOverlay->setAttribute(Qt::WA_TransparentForMouseEvents);
     effectOverlay->setScaledContents(true);
-
     effectOverlay->raise();
+
+    //error glitch
+    glitchLabel = new QLabel(this);
+    glitchLabel->setGeometry(0, 0, 800, 600);
+    glitchLabel->setScaledContents(true);
+    glitchLabel->setAttribute(Qt::WA_TransparentForMouseEvents);
+    glitchError = new QMovie(":/images/images/error_glitch.gif");
+    QGraphicsOpacityEffect *opacity2 = new QGraphicsOpacityEffect(this);
+    opacity2->setOpacity(0.2);
+    glitchLabel->setGraphicsEffect(opacity2);
+    glitchLabel->setMovie(glitchError);
+    glitchLabel->hide();
 
 
     // Buttons
@@ -306,6 +312,8 @@ void GameWorld::resizeEvent(QResizeEvent *event)
     effectOverlay->setGeometry(0, 0, width(), height());
     glitchOverlay->setGeometry(0, 0, width(), height());
 
+    glitchLabel->setGeometry(0, 0, width(), height());
+
     leftButton->move(50, height() - 80);
     rightButton->move(width() - 100, height() - 80);
 
@@ -431,12 +439,14 @@ void GameWorld::showMessage(const QString &msg)
 //effect
 void GameWorld::triggerGlitchShake(int durationMs, int intensity)
 {
-    // Determine what is currently "in front"
+    glitchLabel->show();
+    glitchLabel->raise();
+    glitchError->start();
+
     QWidget* activePuzzle = nullptr;
     if (state == GameState::LAPTOP_TERMINAL) activePuzzle = puzzle;
     else if (state == GameState::PRISON_TERMINAL) activePuzzle = puzzle2;
 
-    // Store original positions so we can reset accurately
     QPoint roomOldPos = roomLabel->pos();
     QPoint puzzleOldPos = activePuzzle ? activePuzzle->pos() : QPoint(0,0);
 
@@ -451,7 +461,7 @@ void GameWorld::triggerGlitchShake(int durationMs, int intensity)
             // Shake the background
             roomLabel->move(roomOldPos.x() + dx, roomOldPos.y() + dy);
 
-            // Shake the puzzle if it's open!
+            // Shake the puzzle if it's open
             if (activePuzzle) {
                 activePuzzle->move(puzzleOldPos.x() + dx, puzzleOldPos.y() + dy);
             }
@@ -461,6 +471,9 @@ void GameWorld::triggerGlitchShake(int durationMs, int intensity)
             // Reset everything
             roomLabel->move(roomOldPos);
             if (activePuzzle) activePuzzle->move(puzzleOldPos);
+
+            glitchError->stop();
+            glitchLabel->hide();
 
             shakeTimer->stop();
             shakeTimer->deleteLater();

@@ -16,6 +16,7 @@
         <file>images/cam.gif</file>
         <file>images/glitchy_cam.gif</file>
         <file>images/camera.png</file>
+        <file>images/error_glitch.gif</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>

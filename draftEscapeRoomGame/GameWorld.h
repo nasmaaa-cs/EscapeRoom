@@ -61,7 +61,10 @@ private:
     QLabel *messageLabel;
     QLabel *effectOverlay;
     QLabel *glitchOverlay;
+    QLabel *glitchLabel;
     QMovie *glitchMovie;
+    QMovie *glitchError;
+
 
     //ROOM BUTTONS
     QPushButton *leftButton;

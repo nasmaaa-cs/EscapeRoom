@@ -66,11 +66,16 @@ GameWorld::GameWorld(QWidget *parent)
 
     // Buttons
     leftButton = new QPushButton("<", this);
+    leftButton->hide();
     rightButton = new QPushButton(">", this);
+    rightButton->hide();
 
     // Position buttons
     leftButton->move(50, 500);
     rightButton->move(700, 500);
+
+
+
 
     // Connections
     connect(leftButton, &QPushButton::clicked, this, &GameWorld::onLeft);
@@ -292,6 +297,15 @@ void GameWorld::updateView()
     else
         girlMarker->hide();
 
+    if (state == GameState::ROOM){
+        leftButton->show();
+        rightButton->show();}
+
+    else {
+        leftButton->hide();
+        rightButton->hide();}
+
+
 }
 
 //game mode
@@ -314,8 +328,8 @@ void GameWorld::resizeEvent(QResizeEvent *event)
 
     glitchLabel->setGeometry(0, 0, width(), height());
 
-    leftButton->move(50, height() - 80);
-    rightButton->move(width() - 100, height() - 80);
+    leftButton->move(50, (height() * 0.6 - 80));
+    rightButton->move(width() - 100, (height() * 0.6 - 80));
 
     laptopMarker->move(width()/2 - 20, height()/2 -20);
 
@@ -340,6 +354,7 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
         laptopMarker->geometry().contains(event->pos()))
     {
         state = GameState::LAPTOP_ZOOM;
+        updateView();
         roomLabel->setPixmap(QPixmap(":/images/images/laptop_closeup.png"));
         return;
     }
@@ -364,6 +379,7 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
         prisonMarker->geometry().contains(event->pos()))
     {
         state = GameState::PRISON_ZOOM;
+        updateView();
         roomLabel->setPixmap(QPixmap(":/images/images/prison_closeup.png"));
         return;
     }
@@ -388,6 +404,7 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
         girlMarker->geometry().contains(event->pos()))
     {
         state = GameState::GIRL_ZOOM;
+        updateView();
         roomLabel->setPixmap(QPixmap(":/images/images/girl_wave.png"));
 
         typeMessage("Thank you for helping me...", 50);

@@ -14,7 +14,7 @@ public:
     explicit GirlPuzzle(QWidget *parent = nullptr);
 
 //protected:
-    //bool eventFilter(QObject *obj, QEvent *event) override;
+    bool eventFilter(QObject *obj, QEvent *event) override;
 
 signals:
     void puzzleSolved();
@@ -23,11 +23,11 @@ signals:
 
 private:
     QPushButton *backButton;
-    //QTextEdit *terminal;
+    QTextEdit *terminal;
 
-    //int step = 0;
+    int step = 0;
 
-    //void handleCommand(QString input);
+    void handleCommand(QString input);
 
     //QLabel *questionLabel;
     //QVector<QPushButton*> choices;

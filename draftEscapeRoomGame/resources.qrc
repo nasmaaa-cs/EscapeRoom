@@ -12,6 +12,10 @@
         <file>images/prison_closeup.png</file>
         <file>images/girl_wave.png</file>
         <file>images/girl_hand.png</file>
+        <file>images/glitch_effect.gif</file>
+        <file>images/cam.gif</file>
+        <file>images/glitchy_cam.gif</file>
+        <file>images/camera.png</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>

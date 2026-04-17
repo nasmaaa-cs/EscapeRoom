@@ -9,13 +9,17 @@
 	"INPUTS" : 
 	[
 		"/home/nasma/draftEscapeRoomGame/images/left.png",
+		"/home/nasma/draftEscapeRoomGame/images/camera.png",
 		"/home/nasma/draftEscapeRoomGame/images/back.png",
 		"/home/nasma/draftEscapeRoomGame/images/front.png",
+		"/home/nasma/draftEscapeRoomGame/images/glitchy_cam.gif",
+		"/home/nasma/draftEscapeRoomGame/images/glitch_effect.gif",
 		"/home/nasma/draftEscapeRoomGame/images/laptop_closeup.png",
 		"/home/nasma/draftEscapeRoomGame/images/girl_hand.png",
 		"/home/nasma/draftEscapeRoomGame/images/girl_wave.png",
 		"/home/nasma/draftEscapeRoomGame/images/mainMenuBG.png",
 		"/home/nasma/draftEscapeRoomGame/images/left_.png",
+		"/home/nasma/draftEscapeRoomGame/images/cam.gif",
 		"/home/nasma/draftEscapeRoomGame/images/right.png",
 		"/home/nasma/draftEscapeRoomGame/images/front_lp.png",
 		"/home/nasma/draftEscapeRoomGame/images/prison_closeup_.png",

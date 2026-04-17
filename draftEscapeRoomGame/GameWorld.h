@@ -4,6 +4,8 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QResizeEvent>
+#include <QMovie>
+#include <QGraphicsOpacityEffect>
 
 #include "gameController.h"
 #include "gameTypes.h"
@@ -58,6 +60,8 @@ private:
     QLabel *overlay;
     QLabel *messageLabel;
     QLabel *effectOverlay;
+    QLabel *glitchOverlay;
+    QMovie *glitchMovie;
 
     //ROOM BUTTONS
     QPushButton *leftButton;

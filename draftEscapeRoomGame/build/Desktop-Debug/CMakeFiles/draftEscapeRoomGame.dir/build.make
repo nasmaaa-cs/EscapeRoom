@@ -79,13 +79,17 @@ draftEscapeRoomGame_autogen/timestamp: CMakeFiles/draftEscapeRoomGame.dir/compil
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/resources.qrc
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: CMakeFiles/draftEscapeRoomGame_autogen.dir/AutoRcc_resources_EWIEGA46WW_Info.json
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/left.png
+draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/camera.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/back.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/front.png
+draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/glitchy_cam.gif
+draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/glitch_effect.gif
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/laptop_closeup.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/girl_hand.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/girl_wave.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/mainMenuBG.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/left_.png
+draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/cam.gif
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/right.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/front_lp.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/prison_closeup_.png

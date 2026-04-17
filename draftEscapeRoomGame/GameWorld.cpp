@@ -21,19 +21,42 @@ GameWorld::GameWorld(QWidget *parent)
     roomLabel->setScaledContents(true);
     roomLabel->setAttribute(Qt::WA_TransparentForMouseEvents);
 
-    // Create the effect layer
-    effectOverlay = new QLabel(this);
-    effectOverlay->setGeometry(0, 0, 800, 600);
-    //effectOverlay->setPixmap(QPixmap(":/images/vhs_filter.png"));
-
-    effectOverlay->setAttribute(Qt::WA_TransparentForMouseEvents);
-    effectOverlay->setScaledContents(true);
-
     // Light overlay
     overlay = new QLabel(this);
     overlay->setGeometry(0, 0, 800, 600);
     overlay->setStyleSheet("background-color: rgba(0,0,0,200);");
     overlay->setAttribute(Qt::WA_TransparentForMouseEvents);
+
+    //glitch effect
+    glitchOverlay = new QLabel(this);
+    glitchOverlay->setGeometry(0, 0, 800, 600);
+    glitchOverlay->setScaledContents(true);
+    glitchOverlay->setAttribute(Qt::WA_TransparentForMouseEvents);
+
+    QGraphicsOpacityEffect *opacityEffect = new QGraphicsOpacityEffect(this);
+    opacityEffect->setOpacity(0.4);
+    glitchOverlay->setGraphicsEffect(opacityEffect);
+
+    glitchMovie = new QMovie(":/images/images/glitchy_cam.gif");
+    glitchOverlay->setMovie(glitchMovie);
+    glitchMovie->start();
+
+    glitchOverlay->raise();
+
+    //Cam layer
+    effectOverlay = new QLabel(this);
+    effectOverlay->setGeometry(0, 0, 800, 600);
+    effectOverlay->setPixmap(QPixmap(":/images/images/camera.png"));
+
+    QGraphicsOpacityEffect *opacity = new QGraphicsOpacityEffect(this);
+    opacity->setOpacity(0.8);
+    effectOverlay->setGraphicsEffect(opacity);
+
+    effectOverlay->setAttribute(Qt::WA_TransparentForMouseEvents);
+    effectOverlay->setScaledContents(true);
+
+    effectOverlay->raise();
+
 
     // Buttons
     leftButton = new QPushButton("<", this);
@@ -280,6 +303,9 @@ void GameWorld::resizeEvent(QResizeEvent *event)
     roomLabel->setGeometry(0, 0, width(), height());
     overlay->setGeometry(0, 0, width(), height());
 
+    effectOverlay->setGeometry(0, 0, width(), height());
+    glitchOverlay->setGeometry(0, 0, width(), height());
+
     leftButton->move(50, height() - 80);
     rightButton->move(width() - 100, height() - 80);
 
@@ -367,7 +393,6 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
         roomLabel->setPixmap(QPixmap(":/images/images/girl_hand.png"));
 
         typeMessage("I can help you get out,"
-                    "but I don't have permission to edit the files. "
                     , 50);
 
         return;

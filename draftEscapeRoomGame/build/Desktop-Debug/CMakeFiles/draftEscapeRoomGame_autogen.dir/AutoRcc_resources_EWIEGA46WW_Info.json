@@ -8,6 +8,7 @@
 	"INCLUDE_DIR" : "/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/include",
 	"INPUTS" : 
 	[
+		"/home/nasma/draftEscapeRoomGame/images/girl_closeup_.png",
 		"/home/nasma/draftEscapeRoomGame/images/left.png",
 		"/home/nasma/draftEscapeRoomGame/images/camera.png",
 		"/home/nasma/draftEscapeRoomGame/images/back.png",
@@ -19,11 +20,11 @@
 		"/home/nasma/draftEscapeRoomGame/images/girl_wave.png",
 		"/home/nasma/draftEscapeRoomGame/images/mainMenuBG.png",
 		"/home/nasma/draftEscapeRoomGame/images/left_.png",
-		"/home/nasma/draftEscapeRoomGame/images/cam.gif",
 		"/home/nasma/draftEscapeRoomGame/images/error_glitch.gif",
 		"/home/nasma/draftEscapeRoomGame/images/right.png",
+		"/home/nasma/draftEscapeRoomGame/images/girl_freed.png",
 		"/home/nasma/draftEscapeRoomGame/images/front_lp.png",
-		"/home/nasma/draftEscapeRoomGame/images/prison_closeup_.png",
+		"/home/nasma/draftEscapeRoomGame/images/girl_waving_left.gif",
 		"/home/nasma/draftEscapeRoomGame/images/prison_closeup.png"
 	],
 	"LOCK_FILE" : "/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/CMakeFiles/draftEscapeRoomGame_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",

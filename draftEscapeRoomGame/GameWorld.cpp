@@ -2,14 +2,13 @@
 #include <QPixmap>
 #include <QResizeEvent>
 #include <QPushButton>
+#include <QTimer>
+#include <QMouseEvent>
 
 #include "LaptopPuzzle.h"
 #include "PrisonPuzzle.h"
 #include "GirlPuzzle.h"
 
-
-#include <QTimer>
-#include <QMouseEvent>
 
 // constructor
 GameWorld::GameWorld(QWidget *parent)
@@ -40,6 +39,7 @@ GameWorld::GameWorld(QWidget *parent)
     glitchMovie->start();
     glitchOverlay->raise();
 
+
     //Cam layer
     effectOverlay = new QLabel(this);
     effectOverlay->setGeometry(0, 0, 800, 600);
@@ -63,6 +63,15 @@ GameWorld::GameWorld(QWidget *parent)
     glitchLabel->setMovie(glitchError);
     glitchLabel->hide();
 
+    //girl vid
+    girl = new QLabel(this);
+    girl->setGeometry(0, 0, 800, 600);
+    girl->setScaledContents(true);
+    girl->setAttribute(Qt::WA_TransparentForMouseEvents);
+    girll = new QMovie(":/images/images/girl_waving_left.gif");
+    girl->setMovie(girll);
+    girll->start();
+    girl->hide();
 
     // Buttons
     leftButton = new QPushButton("<", this);
@@ -73,9 +82,6 @@ GameWorld::GameWorld(QWidget *parent)
     // Position buttons
     leftButton->move(50, 500);
     rightButton->move(700, 500);
-
-
-
 
     // Connections
     connect(leftButton, &QPushButton::clicked, this, &GameWorld::onLeft);
@@ -117,7 +123,6 @@ GameWorld::GameWorld(QWidget *parent)
     puzzle3 = new GirlPuzzle(this);
     puzzle3->hide();
 
-
     //go back from laptop puzzle
     connect(puzzle, &LaptopPuzzle::backToRoom, this, [=]() {
         puzzle->hide();
@@ -154,7 +159,6 @@ GameWorld::GameWorld(QWidget *parent)
             messageLabel->hide();
         });
 
-
         QTimer *flicker = new QTimer(this);
         int count = 0;
 
@@ -174,6 +178,7 @@ GameWorld::GameWorld(QWidget *parent)
 
         flicker->start(200);
     });
+
     //prison puzzle solved
     connect(puzzle2, &PrisonPuzzle::puzzleSolved, this, [=]() {
 
@@ -263,7 +268,7 @@ void GameWorld::updateView()
         if(puzzleStage <2)
             image = ":/images/images/left_.png";
         else
-            image = ":/images/images/left.png";
+            image = ":/images/images/girl_freed.png";
 
         break;
 
@@ -305,6 +310,8 @@ void GameWorld::updateView()
         leftButton->hide();
         rightButton->hide();}
 
+    if (state != GameState::GIRL_ZOOM) {
+        girl->hide();}
 
 }
 
@@ -327,6 +334,8 @@ void GameWorld::resizeEvent(QResizeEvent *event)
     glitchOverlay->setGeometry(0, 0, width(), height());
 
     glitchLabel->setGeometry(0, 0, width(), height());
+
+    girl->setGeometry(0, 0, width(), height());
 
     leftButton->move(50, (height() * 0.6 - 80));
     rightButton->move(width() - 100, (height() * 0.6 - 80));
@@ -404,8 +413,7 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
         girlMarker->geometry().contains(event->pos()))
     {
         state = GameState::GIRL_ZOOM;
-        updateView();
-        roomLabel->setPixmap(QPixmap(":/images/images/girl_wave.png"));
+        roomLabel->setPixmap(QPixmap(":/images/images/girl_closeup_.png"));
 
         typeMessage("Thank you for helping me...", 50);
 
@@ -415,7 +423,13 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
     if (state == GameState::GIRL_ZOOM)
     {
         state = GameState::GIRL_ZOOM2;
-        roomLabel->setPixmap(QPixmap(":/images/images/girl_hand.png"));
+
+
+        updateView();
+        //roomLabel->setPixmap(QPixmap(":/images/images/girl_hand.png"));
+
+
+
 
         typeMessage("I can help you get out,"
                     , 50);
@@ -426,7 +440,7 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
     if (state == GameState::GIRL_ZOOM2)
     {
         state = GameState::GIRL_ZOOM3;
-        roomLabel->setPixmap(QPixmap(":/images/images/girl_hand.png"));
+        //roomLabel->setPixmap(QPixmap(":/images/images/girl_hand.png"));
 
         typeMessage("I don't have permission to read, write, or execute... Can you give me access?", 50);
 

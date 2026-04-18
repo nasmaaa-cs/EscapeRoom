@@ -1,0 +1,3 @@
+/home/nasma/draftEscapeRoomGame/build/CMakeFiles/CMakeScratch/TryCompile-uFUIeQ/CMakeFiles/cmTC_a6f29.dir
+/home/nasma/draftEscapeRoomGame/build/CMakeFiles/CMakeScratch/TryCompile-uFUIeQ/CMakeFiles/edit_cache.dir
+/home/nasma/draftEscapeRoomGame/build/CMakeFiles/CMakeScratch/TryCompile-uFUIeQ/CMakeFiles/rebuild_cache.dir

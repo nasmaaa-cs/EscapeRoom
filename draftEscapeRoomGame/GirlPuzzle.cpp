@@ -20,7 +20,7 @@ GirlPuzzle::GirlPuzzle(QWidget *parent)
 
         terminal->append("PRISON SYSTEM v1.04");
         terminal->append("Type command after the prompt.");
-        terminal->append("\n> "); // This is the initial prompt
+        terminal->append("\n> "); // This is the initial promp
 
         terminal->installEventFilter(this);
 

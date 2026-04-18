@@ -78,6 +78,7 @@ draftEscapeRoomGame_autogen/timestamp: CMakeFiles/draftEscapeRoomGame.dir/compil
 
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/resources.qrc
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: CMakeFiles/draftEscapeRoomGame_autogen.dir/AutoRcc_resources_EWIEGA46WW_Info.json
+draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/girl_closeup_.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/left.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/camera.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/back.png
@@ -89,11 +90,11 @@ draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscap
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/girl_wave.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/mainMenuBG.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/left_.png
-draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/cam.gif
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/error_glitch.gif
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/right.png
+draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/girl_freed.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/front_lp.png
-draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/prison_closeup_.png
+draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/girl_waving_left.gif
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/prison_closeup.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /usr/lib/qt6/libexec/rcc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for resources.qrc"

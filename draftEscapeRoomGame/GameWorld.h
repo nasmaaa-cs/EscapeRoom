@@ -64,6 +64,8 @@ private:
     QLabel *glitchLabel;
     QMovie *glitchMovie;
     QMovie *glitchError;
+    QLabel *girl;
+    QMovie *girll;
 
 
     //ROOM BUTTONS

@@ -438,6 +438,10 @@ CMakeFiles/draftEscapeRoomGame.dir/GameWorld.cpp.o: \
   /home/nasma/draftEscapeRoomGame/gameController.h \
   /home/nasma/draftEscapeRoomGame/gameTypes.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QPixmap \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimer.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QMouseEvent \
   /home/nasma/draftEscapeRoomGame/LaptopPuzzle.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTextEdit \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtextedit.h \
@@ -449,8 +453,4 @@ CMakeFiles/draftEscapeRoomGame.dir/GameWorld.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QVector \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qvector.h \
   /home/nasma/draftEscapeRoomGame/PrisonPuzzle.h \
-  /home/nasma/draftEscapeRoomGame/GirlPuzzle.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimer.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/QMouseEvent
+  /home/nasma/draftEscapeRoomGame/GirlPuzzle.h

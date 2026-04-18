@@ -7,16 +7,17 @@
         <file>images/mainMenuBG.png</file>
         <file>images/laptop_closeup.png</file>
         <file>images/front_lp.png</file>
-        <file>images/prison_closeup_.png</file>
         <file>images/left_.png</file>
         <file>images/prison_closeup.png</file>
         <file>images/girl_wave.png</file>
         <file>images/girl_hand.png</file>
         <file>images/glitch_effect.gif</file>
-        <file>images/cam.gif</file>
         <file>images/glitchy_cam.gif</file>
         <file>images/camera.png</file>
         <file>images/error_glitch.gif</file>
+        <file>images/girl_freed.png</file>
+        <file>images/girl_waving_left.gif</file>
+        <file>images/girl_closeup_.png</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>

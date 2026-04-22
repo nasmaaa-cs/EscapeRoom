@@ -34,22 +34,22 @@ GameWorld::GameWorld(QWidget *parent)
     QGraphicsOpacityEffect *opacityEffect = new QGraphicsOpacityEffect(this);
     opacityEffect->setOpacity(0.4);
     glitchOverlay->setGraphicsEffect(opacityEffect);
-    glitchMovie = new QMovie(":/images/images/glitchy_cam.gif");
-    glitchOverlay->setMovie(glitchMovie);
-    glitchMovie->start();
-    glitchOverlay->raise();
+    //glitchMovie = new QMovie(":/images/images/tv.gif");
+    //glitchOverlay->setMovie(glitchMovie);
+    //glitchMovie->start();
+    //glitchOverlay->raise();
 
 
     //Cam layer
     effectOverlay = new QLabel(this);
     effectOverlay->setGeometry(0, 0, 800, 600);
-    effectOverlay->setPixmap(QPixmap(":/images/images/camera.png"));
+    //effectOverlay->setPixmap(QPixmap(":/images/images/cam.png"));
     QGraphicsOpacityEffect *opacity = new QGraphicsOpacityEffect(this);
     opacity->setOpacity(0.8);
     effectOverlay->setGraphicsEffect(opacity);
     effectOverlay->setAttribute(Qt::WA_TransparentForMouseEvents);
-    effectOverlay->setScaledContents(true);
-    effectOverlay->raise();
+    //effectOverlay->setScaledContents(true);
+    //effectOverlay->raise();
 
     //error glitch
     glitchLabel = new QLabel(this);
@@ -413,9 +413,9 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
         girlMarker->geometry().contains(event->pos()))
     {
         state = GameState::GIRL_ZOOM;
-        roomLabel->setPixmap(QPixmap(":/images/images/girl_closeup_.png"));
+        roomLabel->setPixmap(QPixmap(":/images/images/girl_side.png"));
 
-        typeMessage("Thank you for helping me...", 50);
+        //typeMessage("Thank you for helping me...", 50);
 
         return;
     }
@@ -426,13 +426,12 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
 
 
         updateView();
-        //roomLabel->setPixmap(QPixmap(":/images/images/girl_hand.png"));
+        roomLabel->setPixmap(QPixmap(":/images/images/girl_closeup_.png"));
 
 
 
 
-        typeMessage("I can help you get out,"
-                    , 50);
+        //typeMessage("I can help you get out," 50);
 
         return;
     }
@@ -440,9 +439,9 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
     if (state == GameState::GIRL_ZOOM2)
     {
         state = GameState::GIRL_ZOOM3;
-        //roomLabel->setPixmap(QPixmap(":/images/images/girl_hand.png"));
+        roomLabel->setPixmap(QPixmap(":/images/images/girl_closeup_.png"));
 
-        typeMessage("I don't have permission to read, write, or execute... Can you give me access?", 50);
+        //typeMessage("I don't have permission to read, write, or execute... Can you give me access?", 50);
 
         puzzle3->setGeometry((width() - 400)/2, (height() - 300)/2, 400, 300);
         puzzle3->raise();

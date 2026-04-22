@@ -18,6 +18,9 @@
         <file>images/girl_freed.png</file>
         <file>images/girl_waving_left.gif</file>
         <file>images/girl_closeup_.png</file>
+        <file>images/girl_side.png</file>
+        <file>images/tv.gif</file>
+        <file>images/cam.png</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>

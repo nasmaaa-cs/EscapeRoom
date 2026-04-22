@@ -85,6 +85,9 @@ draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscap
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/front.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/glitchy_cam.gif
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/glitch_effect.gif
+draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/cam.png
+draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/tv.gif
+draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/girl_side.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/laptop_closeup.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/girl_hand.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/girl_wave.png

@@ -447,15 +447,34 @@ CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/mocs_compilation.
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTextEdit \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtextedit.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractscrollarea.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QVector \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvector.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLineEdit \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlineedit.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTreeWidget \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtreewidget.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtreeview.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractitemview.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qabstractitemmodel.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qitemselectionmodel.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractitemdelegate.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qstyleoption.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractspinbox.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qvalidator.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qslider.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractslider.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qstyle.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabbar.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qrubberband.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtreewidgetitemiterator.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QStringList \
   /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/moc_LaptopPuzzle.cpp \
   /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/../../../../LaptopPuzzle.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QVector \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvector.h \
   /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/moc_MainWindow.cpp \
   /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/../../../../MainWindow.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimer.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
@@ -469,6 +488,4 @@ CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/mocs_compilation.
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayout.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLineEdit \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlineedit.h
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h

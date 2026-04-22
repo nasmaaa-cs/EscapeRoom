@@ -1,10 +1,11 @@
 #pragma once
 
 #include <QWidget>
-#include <QPushButton>
-#include <QLabel>
 #include <QTextEdit>
-#include <QVector>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QTreeWidget>
+#include <QStringList>
 
 class GirlPuzzle : public QWidget
 {
@@ -13,29 +14,29 @@ class GirlPuzzle : public QWidget
 public:
     explicit GirlPuzzle(QWidget *parent = nullptr);
 
-//protected:
-    bool eventFilter(QObject *obj, QEvent *event) override;
-
 signals:
-    void puzzleSolved();
     void backToRoom();
+    void puzzleSolved();
     void wrongAnswer();
 
+private slots:
+    void onCommandEntered(); // New slot to handle the Enter key
+
 private:
-    QPushButton *backButton;
-    QTextEdit *terminal;
-
-    int step = 0;
-
     void handleCommand(QString input);
 
-    //QLabel *questionLabel;
-    //QVector<QPushButton*> choices;
+    // UI Elements
+    QTreeWidget *fileBrowser;
+    QTextEdit *terminalOutput; // Read-only history
+    QLineEdit *terminalInput;  // Where the player actually types
+    QPushButton *backButton;
+    QTreeWidgetItem *playerDir;
 
-    //int currentQuestion = 0;
+    // Puzzle State Variables
+    int step = 0;
+    bool dirCreated = false;
+    int filesCopiedCount = 0;
 
-    //void setupUI();
-
-    //void loadQuestion();
-    //void checkAnswer(int index);
+    // Updated file list
+    QStringList requiredFiles = {"CMakeLists.txt", "g++", "Makefile"};
 };

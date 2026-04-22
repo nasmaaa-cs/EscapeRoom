@@ -310,10 +310,12 @@ draftEscapeRoomGame_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QRect \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QSize \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QSizeF \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/QStringList \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QVector \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/q20algorithm.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/q20functional.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qabstractitemmodel.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qalgorithms.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qanystringview.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydata.h \
@@ -356,6 +358,7 @@ draftEscapeRoomGame_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qhashfunctions.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevice.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevicebase.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qitemselectionmodel.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qiterable.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qiterator.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qjsonobject.h \
@@ -458,6 +461,7 @@ draftEscapeRoomGame_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiexports.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiglobal.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtransform.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtGui/qvalidator.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qvector2d.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qvectornd.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qwindowdefs.h \
@@ -467,10 +471,15 @@ draftEscapeRoomGame_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTextEdit \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTreeWidget \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractitemdelegate.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractitemview.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractscrollarea.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractslider.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractspinbox.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicseffect.h \
@@ -481,9 +490,17 @@ draftEscapeRoomGame_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlineedit.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qrubberband.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qslider.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qstyle.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qstyleoption.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabbar.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtextedit.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtreeview.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtreewidget.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtreewidgetitemiterator.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgets-config.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsexports.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \

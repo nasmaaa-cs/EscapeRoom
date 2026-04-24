@@ -20,15 +20,15 @@ signals:
     void wrongAnswer();
 
 private slots:
-    void onCommandEntered(); // New slot to handle the Enter key
+    void onCommandEntered();
 
 private:
     void handleCommand(QString input);
 
     // UI Elements
     QTreeWidget *fileBrowser;
-    QTextEdit *terminalOutput; // Read-only history
-    QLineEdit *terminalInput;  // Where the player actually types
+    QTextEdit *terminalOutput;
+    QLineEdit *terminalInput;
     QPushButton *backButton;
     QTreeWidgetItem *playerDir;
 

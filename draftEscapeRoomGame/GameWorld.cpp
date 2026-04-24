@@ -230,7 +230,11 @@ GameWorld::GameWorld(QWidget *parent)
     });
 
     connect(puzzle2, &PrisonPuzzle::wrongAnswer, this, [=]() {
-        triggerGlitchShake(300, 10); // Shake for 300ms with 10px intensity
+        triggerGlitchShake(300, 10);
+    });
+
+    connect(puzzle3, &GirlPuzzle::wrongAnswer, this, [=]() {
+        triggerGlitchShake(300, 10);
     });
 
     //message when puzzle solved

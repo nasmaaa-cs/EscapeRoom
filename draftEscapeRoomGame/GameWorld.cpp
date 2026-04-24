@@ -108,8 +108,8 @@ GameWorld::GameWorld(QWidget *parent)
     girlMarker->setStyleSheet("background-color: black;");
     girlMarker->hide();
 
-    prisonMarker->raise();
-    prisonMarker->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+    girlMarker->raise();
+    girlMarker->setAttribute(Qt::WA_TransparentForMouseEvents, true);
 
     //laptop puzzle
     puzzle = new LaptopPuzzle(this);
@@ -476,6 +476,7 @@ void GameWorld::triggerGlitchShake(int durationMs, int intensity)
     QWidget* activePuzzle = nullptr;
     if (state == GameState::LAPTOP_TERMINAL) activePuzzle = puzzle;
     else if (state == GameState::PRISON_TERMINAL) activePuzzle = puzzle2;
+    else if (state == GameState::GIRL_ZOOM3) activePuzzle = puzzle3;
 
     QPoint roomOldPos = roomLabel->pos();
     QPoint puzzleOldPos = activePuzzle ? activePuzzle->pos() : QPoint(0,0);

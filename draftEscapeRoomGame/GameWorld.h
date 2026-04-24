@@ -18,7 +18,8 @@ enum class GameState {
     PRISON_TERMINAL,
     GIRL_ZOOM,
     GIRL_ZOOM2,
-    GIRL_ZOOM3
+    GIRL_ZOOM3,
+    DESK_ZOOM
 };
 
 class LaptopPuzzle;
@@ -76,6 +77,7 @@ private:
     QLabel *laptopMarker;//for laptop puzzle
     QLabel *prisonMarker;//for prison puzzle
     QLabel *girlMarker;//for girl puzzle
+    QLabel *deskMarker; //for desk puzzle
 
     //bool laptopUnlocked = true;
     //bool laptopSolved = false;

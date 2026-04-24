@@ -38,5 +38,5 @@ private:
     int filesCopiedCount = 0;
 
     // Updated file list
-    QStringList requiredFiles = {"CMakeLists.txt", "g++", "Makefile"};
+    QStringList requiredFiles = {"CMakeLists.txt", "task", "Makefile"};
 };

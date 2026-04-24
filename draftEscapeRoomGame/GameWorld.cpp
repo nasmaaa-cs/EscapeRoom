@@ -56,7 +56,7 @@ GameWorld::GameWorld(QWidget *parent)
     glitchLabel->setGeometry(0, 0, 800, 600);
     glitchLabel->setScaledContents(true);
     glitchLabel->setAttribute(Qt::WA_TransparentForMouseEvents);
-    glitchError = new QMovie(":/images/images/error_glitch.gif");
+    glitchError = new QMovie(":/images/images/errorrr.gif");
     QGraphicsOpacityEffect *opacity2 = new QGraphicsOpacityEffect(this);
     opacity2->setOpacity(0.2);
     glitchLabel->setGraphicsEffect(opacity2);
@@ -111,6 +111,16 @@ GameWorld::GameWorld(QWidget *parent)
     girlMarker->raise();
     girlMarker->setAttribute(Qt::WA_TransparentForMouseEvents, true);
 
+    //desk clue unlocked
+    deskMarker = new QLabel(this);
+    deskMarker->setGeometry(350, 300, 40, 40);
+    deskMarker->setStyleSheet("background-color: black;");
+    deskMarker->hide();
+
+    deskMarker->raise();
+    deskMarker->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+
+
     //laptop puzzle
     puzzle = new LaptopPuzzle(this);
     puzzle->hide();
@@ -122,6 +132,7 @@ GameWorld::GameWorld(QWidget *parent)
     //girl puzzle
     puzzle3 = new GirlPuzzle(this);
     puzzle3->hide();
+
 
     //go back from laptop puzzle
     connect(puzzle, &LaptopPuzzle::backToRoom, this, [=]() {
@@ -277,7 +288,12 @@ void GameWorld::updateView()
         break;
 
     case Wall::RIGHT: image = ":/images/images/right.png"; break;
-    case Wall::BACK:  image = ":/images/images/back.png"; break;
+    case Wall::BACK:
+        if(puzzleStage <3)
+            image = ":/images/images/back_.png";
+        else
+            image = ":/images/images/files.png";
+        break;
     }
 
     roomLabel->setPixmap(QPixmap(image));
@@ -317,6 +333,12 @@ void GameWorld::updateView()
     if (state != GameState::GIRL_ZOOM) {
         girl->hide();}
 
+    //shows when desk puzzle unlocked
+    if (controller.currentWall == Wall::BACK && puzzleStage == 3)
+        deskMarker->show();
+    else
+        deskMarker->hide();
+
 }
 
 //game mode
@@ -352,6 +374,8 @@ void GameWorld::resizeEvent(QResizeEvent *event)
     prisonMarker->setGeometry( x, y, 40, 40);
 
     girlMarker->move(width()/2 - 20, height()/2 -20);
+
+    deskMarker->move(width()/2 -20, (height() * 0.68 - 80));
 }
 
 //zoom in
@@ -455,6 +479,19 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
 
         return;
     }
+
+    //desk
+    if (state == GameState::ROOM &&
+        controller.currentWall == Wall::BACK &&
+        deskMarker->isVisible() &&
+        deskMarker->geometry().contains(event->pos()))
+    {
+        state = GameState::DESK_ZOOM;
+        updateView();
+        roomLabel->setPixmap(QPixmap(":/images/images/desk_closeup_.png"));
+        return;
+    }
+
 
 
 }

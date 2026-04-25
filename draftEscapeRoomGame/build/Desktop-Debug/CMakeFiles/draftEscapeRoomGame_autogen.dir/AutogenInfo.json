@@ -210,6 +210,12 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/nasma/draftEscapeRoomGame/DeskPuzzle.h",
+			"MU",
+			"EWIEGA46WW/moc_DeskPuzzle.cpp",
+			null
+		],
+		[
 			"/home/nasma/draftEscapeRoomGame/GameWorld.h",
 			"MU",
 			"EWIEGA46WW/moc_GameWorld.cpp",
@@ -316,6 +322,7 @@
 	"SETTINGS_FILE" : "/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/CMakeFiles/draftEscapeRoomGame_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "/home/nasma/draftEscapeRoomGame/DeskPuzzle.cpp", "MU", null ],
 		[ "/home/nasma/draftEscapeRoomGame/GameWorld.cpp", "MU", null ],
 		[ "/home/nasma/draftEscapeRoomGame/GirlPuzzle.cpp", "MU", null ],
 		[ "/home/nasma/draftEscapeRoomGame/LaptopPuzzle.cpp", "MU", null ],

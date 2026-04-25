@@ -9,6 +9,7 @@
 
 #include "gameController.h"
 #include "gameTypes.h"
+#include "DeskPuzzle.h"
 
 enum class GameState {
     ROOM,
@@ -25,6 +26,7 @@ enum class GameState {
 class LaptopPuzzle;
 class PrisonPuzzle;
 class GirlPuzzle;
+class DeskPuzzle;
 
 class GameWorld : public QWidget {
     Q_OBJECT
@@ -77,7 +79,9 @@ private:
     QLabel *laptopMarker;//for laptop puzzle
     QLabel *prisonMarker;//for prison puzzle
     QLabel *girlMarker;//for girl puzzle
-    QLabel *deskMarker; //for desk puzzle
+    QLabel *deskMarker;//for desk puzzle
+    QLabel *taskMarker;//for task file
+    QLabel *cmakeMarker;//for CMakeLists.txt file
 
     //bool laptopUnlocked = true;
     //bool laptopSolved = false;
@@ -85,6 +89,7 @@ private:
     LaptopPuzzle *puzzle;
     PrisonPuzzle *puzzle2;
     GirlPuzzle *puzzle3;
+    DeskPuzzle *puzzle4;
 
     int puzzleStage = 0;
 

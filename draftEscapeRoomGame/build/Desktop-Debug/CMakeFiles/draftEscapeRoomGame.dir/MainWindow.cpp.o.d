@@ -446,4 +446,13 @@ CMakeFiles/draftEscapeRoomGame.dir/MainWindow.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qfactoryinterface.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsOpacityEffect \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicseffect.h \
-  /home/nasma/draftEscapeRoomGame/gameController.h
+  /home/nasma/draftEscapeRoomGame/gameController.h \
+  /home/nasma/draftEscapeRoomGame/DeskPuzzle.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTextEdit \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtextedit.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractscrollarea.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextoption.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextcursor.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextformat.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpen.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QMouseEvent

@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "draftEscapeRoomGame_autogen/timestamp" "custom" "draftEscapeRoomGame_autogen/deps"
+  "/home/nasma/draftEscapeRoomGame/DeskPuzzle.cpp" "CMakeFiles/draftEscapeRoomGame.dir/DeskPuzzle.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/DeskPuzzle.cpp.o.d"
   "/home/nasma/draftEscapeRoomGame/GameWorld.cpp" "CMakeFiles/draftEscapeRoomGame.dir/GameWorld.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/GameWorld.cpp.o.d"
   "/home/nasma/draftEscapeRoomGame/GirlPuzzle.cpp" "CMakeFiles/draftEscapeRoomGame.dir/GirlPuzzle.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/GirlPuzzle.cpp.o.d"
   "/home/nasma/draftEscapeRoomGame/LaptopPuzzle.cpp" "CMakeFiles/draftEscapeRoomGame.dir/LaptopPuzzle.cpp.o" "gcc" "CMakeFiles/draftEscapeRoomGame.dir/LaptopPuzzle.cpp.o.d"

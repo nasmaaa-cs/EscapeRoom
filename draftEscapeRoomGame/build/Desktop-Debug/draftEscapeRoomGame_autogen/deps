@@ -1,5 +1,7 @@
 draftEscapeRoomGame_autogen/timestamp: \
 	/home/nasma/draftEscapeRoomGame/CMakeLists.txt \
+	/home/nasma/draftEscapeRoomGame/DeskPuzzle.cpp \
+	/home/nasma/draftEscapeRoomGame/DeskPuzzle.h \
 	/home/nasma/draftEscapeRoomGame/GameWorld.cpp \
 	/home/nasma/draftEscapeRoomGame/GameWorld.h \
 	/home/nasma/draftEscapeRoomGame/GirlPuzzle.cpp \
@@ -421,6 +423,7 @@ draftEscapeRoomGame_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qvector.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qversiontagging.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtGui/QMouseEvent \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/QMovie \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/QResizeEvent \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/QTransform \

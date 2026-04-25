@@ -1,6 +1,6 @@
 CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/mocs_compilation.cpp.o: \
   /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/mocs_compilation.cpp \
-  /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/moc_GameWorld.cpp \
+  /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/moc_DeskPuzzle.cpp \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/memoryfwd.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -135,7 +135,7 @@ CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/mocs_compilation.
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/backward/auto_ptr.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/pstl/glue_memory_defs.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/pstl/execution_defs.h \
-  /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/../../../../GameWorld.h \
+  /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/../../../../DeskPuzzle.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \
@@ -394,10 +394,17 @@ CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/mocs_compilation.
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevice.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextdocument.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qurl.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTextEdit \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtextedit.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractscrollarea.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextoption.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextcursor.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextformat.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpen.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/QResizeEvent \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QMouseEvent \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qevent.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreevent.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qpointer.h \
@@ -414,6 +421,9 @@ CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/mocs_compilation.
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QSizeF \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QTransform \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h \
+  /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/moc_GameWorld.cpp \
+  /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/../../../../GameWorld.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QResizeEvent \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QMovie \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qmovie.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qimagereader.h \
@@ -438,15 +448,8 @@ CMakeFiles/draftEscapeRoomGame.dir/draftEscapeRoomGame_autogen/mocs_compilation.
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicseffect.h \
   /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/../../../../gameController.h \
   /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/../../../../gameTypes.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextcursor.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextformat.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpen.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextoption.h \
   /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/moc_GirlPuzzle.cpp \
   /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/../../../../GirlPuzzle.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTextEdit \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtextedit.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractscrollarea.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLineEdit \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlineedit.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTreeWidget \

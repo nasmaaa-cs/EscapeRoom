@@ -120,6 +120,23 @@ GameWorld::GameWorld(QWidget *parent)
     deskMarker->raise();
     deskMarker->setAttribute(Qt::WA_TransparentForMouseEvents, true);
 
+    //task file unlocked
+    taskMarker = new QLabel(this);
+    taskMarker->setGeometry(350, 300, 40, 40);
+    taskMarker->setStyleSheet("background-color: black;");
+    taskMarker->hide();
+    taskMarker->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+    taskMarker->raise();
+    taskMarker->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+
+    //cmakelists.txt file unlocked
+    cmakeMarker = new QLabel(this);
+    cmakeMarker->setGeometry(350, 300, 40, 40);
+    cmakeMarker->setStyleSheet("background-color: black;");
+    cmakeMarker->hide();
+    cmakeMarker->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+    cmakeMarker->raise();
+    cmakeMarker->setAttribute(Qt::WA_TransparentForMouseEvents, true);
 
     //laptop puzzle
     puzzle = new LaptopPuzzle(this);
@@ -133,6 +150,9 @@ GameWorld::GameWorld(QWidget *parent)
     puzzle3 = new GirlPuzzle(this);
     puzzle3->hide();
 
+    //desk puzzle
+    puzzle4 = new DeskPuzzle(this);
+    puzzle4->hide();
 
     //go back from laptop puzzle
     connect(puzzle, &LaptopPuzzle::backToRoom, this, [=]() {
@@ -234,6 +254,26 @@ GameWorld::GameWorld(QWidget *parent)
         updateView();
     });
 
+    //desk puzzle solved
+
+    connect(puzzle4, &DeskPuzzle::puzzleSolved, this, [=]() {
+        state = GameState::ROOM;
+        puzzleStage++;
+        puzzle4->hide();
+        deskMarker->hide();
+        taskMarker->hide();
+        cmakeMarker->hide();
+
+        messageLabel->setText("Puzzle 4 Completed!");
+        messageLabel->setWordWrap(true);
+        messageLabel->show();
+
+        QTimer::singleShot(2000, this, [=]() {
+            messageLabel->hide();
+        });
+        updateView();
+    });
+
     //wrong answer
 \
     connect(puzzle, &LaptopPuzzle::wrongAnswer, this, [=]() {
@@ -245,6 +285,10 @@ GameWorld::GameWorld(QWidget *parent)
     });
 
     connect(puzzle3, &GirlPuzzle::wrongAnswer, this, [=]() {
+        triggerGlitchShake(300, 10);
+    });
+
+    connect(puzzle4, &DeskPuzzle::wrongAnswer, this, [=]() {
         triggerGlitchShake(300, 10);
     });
 
@@ -334,10 +378,19 @@ void GameWorld::updateView()
         girl->hide();}
 
     //shows when desk puzzle unlocked
-    if (controller.currentWall == Wall::BACK && puzzleStage == 3)
+    if (state == GameState::ROOM && controller.currentWall == Wall::BACK && puzzleStage == 3) {
         deskMarker->show();
-    else
+        taskMarker->hide();
+        cmakeMarker->hide();
+    } else if (state == GameState::DESK_ZOOM) {
+        deskMarker->show();
+        taskMarker->show();
+        cmakeMarker->show();
+    } else {
         deskMarker->hide();
+        taskMarker->hide();
+        cmakeMarker->hide();
+    }
 
 }
 
@@ -376,6 +429,12 @@ void GameWorld::resizeEvent(QResizeEvent *event)
     girlMarker->move(width()/2 - 20, height()/2 -20);
 
     deskMarker->move(width()/2 -20, (height() * 0.68 - 80));
+    taskMarker->move(width()/2 - 360, height() * 0.68 - 80);
+    cmakeMarker->move(width()/2 + 360, height() * 0.68 - 80);
+
+    if (puzzle4) {
+        puzzle4->setGeometry(0, 0, width(), height());
+    }
 }
 
 //zoom in
@@ -489,10 +548,31 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
         state = GameState::DESK_ZOOM;
         updateView();
         roomLabel->setPixmap(QPixmap(":/images/images/desk_closeup_.png"));
+
+        puzzle4->show();
+        puzzle4->raise();
+
+        taskMarker->raise();
+        deskMarker->raise();
+        cmakeMarker->raise();
         return;
     }
 
-
+    if (state == GameState::DESK_ZOOM)
+    {
+        if (taskMarker->geometry().contains(event->pos())) {
+            puzzle4->showTaskWindow();
+            return;
+        }
+        if (deskMarker->geometry().contains(event->pos())) {
+            puzzle4->showMakefileWindow();
+            return;
+        }
+        if (cmakeMarker->geometry().contains(event->pos())) {
+            puzzle4->showCMakeWindow();
+            return;
+        }
+    }
 
 }
 

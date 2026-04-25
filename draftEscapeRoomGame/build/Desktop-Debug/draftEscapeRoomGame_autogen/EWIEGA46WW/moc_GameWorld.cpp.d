@@ -1,5 +1,6 @@
 /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/EWIEGA46WW/moc_GameWorld.cpp: /home/nasma/draftEscapeRoomGame/GameWorld.h \
   /home/nasma/draftEscapeRoomGame/build/Desktop-Debug/draftEscapeRoomGame_autogen/moc_predefs.h \
+  /home/nasma/draftEscapeRoomGame/DeskPuzzle.h \
   /home/nasma/draftEscapeRoomGame/gameController.h \
   /home/nasma/draftEscapeRoomGame/gameTypes.h \
   /usr/include/alloca.h \
@@ -392,6 +393,7 @@
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariant.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qversiontagging.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QMouseEvent \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QMovie \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QResizeEvent \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QTransform \
@@ -414,6 +416,7 @@
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qmovie.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qpaintdevice.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qpalette.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpen.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qpicture.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qpixelformat.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qpixmap.h \
@@ -423,7 +426,10 @@
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qrgb.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qrgba64.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qscreen.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextcursor.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextdocument.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextformat.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextoption.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qtgui-config.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiexports.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiglobal.h \
@@ -434,13 +440,16 @@
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsOpacityEffect \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLabel \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTextEdit \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractscrollarea.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicseffect.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlabel.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtextedit.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgets-config.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsexports.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \

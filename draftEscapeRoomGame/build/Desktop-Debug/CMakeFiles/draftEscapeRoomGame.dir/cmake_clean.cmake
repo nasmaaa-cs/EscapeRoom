@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/draftEscapeRoomGame_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/draftEscapeRoomGame_autogen.dir/ParseCache.txt"
   "draftEscapeRoomGame_autogen"
+  "CMakeFiles/draftEscapeRoomGame.dir/DeskPuzzle.cpp.o"
+  "CMakeFiles/draftEscapeRoomGame.dir/DeskPuzzle.cpp.o.d"
   "CMakeFiles/draftEscapeRoomGame.dir/GameWorld.cpp.o"
   "CMakeFiles/draftEscapeRoomGame.dir/GameWorld.cpp.o.d"
   "CMakeFiles/draftEscapeRoomGame.dir/GirlPuzzle.cpp.o"

@@ -20,12 +20,13 @@ DeskPuzzle::DeskPuzzle(QWidget *parent) : QWidget(parent)
     QLabel *makeLabel = new QLabel(
         "FLAGS = -Wall -std=c++17\n"
         "TARGET = escape\n\n"
-        "$(TARGET) : main.o room.o\n"
-        "\tg++ $(FLAGS) -o $(TARGET) main.o room.o\n\n"
+        "$(TARGET) : main.o door.png\n"
+        "\tg++ $(FLAGS) -o $(TARGET) main.o\n\n"
         "main.o : main.cpp\n"
         "\tg++ $(FLAGS) -c main.cpp\n\n"
-        "room.o : room.cpp\n"
-        "\tg++ $(FLAGS) -c room.cpp"
+        "# ASSET SYNC\n"
+        "door.png :\n"
+        "\t@echo 'Syncing asset: door.png...'"
         );
     makeLabel->setWordWrap(true);
     makeLabel->setStyleSheet("color: #33ff33; font-family: monospace; font-size: 15px; padding: 10px; border: none;");
@@ -118,8 +119,8 @@ void DeskPuzzle::checkAnswer()
     else if (!answer.contains("add_executable(escape")) {
         errorMsg = "LINKER ERROR: TARGET NAME MISMATCH. 'escape' TARGET NOT FOUND.";
     }
-    //6: Source Files (main.cpp and room.cpp)
-    else if (!answer.contains("main.cpp") || !answer.contains("room.cpp")) {
+    //6: Source Files (main.cpp and door.png)
+    else if (!answer.contains("main.cpp") || !answer.contains("door.png")) {
         errorMsg = "COMPILATION ERROR: UNDEFINED REFERENCE - SOURCE FILES MISSING OR INVALID.";
     }
 

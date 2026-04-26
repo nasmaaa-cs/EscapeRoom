@@ -92,7 +92,9 @@ draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscap
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/right.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/girl_freed.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/front_lp.png
+draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/dg.gif
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/girl_waving_left.gif
+draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/right_.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /home/nasma/draftEscapeRoomGame/images/prison_closeup.png
 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp: /usr/lib/qt6/libexec/rcc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nasma/draftEscapeRoomGame/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for resources.qrc"

@@ -69,6 +69,9 @@ private:
     QMovie *glitchError;
     QLabel *girl;
     QMovie *girll;
+    QLabel *hologramDoor;
+    QMovie *hologramMovie;
+    QGraphicsOpacityEffect *hologramOpacity;
 
 
     //ROOM BUTTONS

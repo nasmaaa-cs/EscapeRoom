@@ -16,6 +16,8 @@
         <file>images/files.png</file>
         <file>images/errorrr.gif</file>
         <file>images/desk_closeup_.png</file>
+        <file>images/right_.png</file>
+        <file>images/dg.gif</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>

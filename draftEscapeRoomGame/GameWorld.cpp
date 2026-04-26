@@ -39,6 +39,19 @@ GameWorld::GameWorld(QWidget *parent)
     //glitchMovie->start();
     //glitchOverlay->raise();
 
+    //Hologram Door
+    hologramDoor = new QLabel(this);
+    hologramDoor->setGeometry(0, 0, 800, 600);
+    hologramDoor->setScaledContents(true);
+    hologramMovie = new QMovie(":/images/images/dg.gif");
+    hologramDoor->setMovie(hologramMovie);
+    hologramOpacity = new QGraphicsOpacityEffect(this);
+    hologramOpacity->setOpacity(0.45);
+    hologramDoor->setGraphicsEffect(hologramOpacity);
+    hologramDoor->setAttribute(Qt::WA_TransparentForMouseEvents);
+    hologramMovie->start();
+    hologramDoor->hide();
+
 
     //Cam layer
     effectOverlay = new QLabel(this);
@@ -331,7 +344,7 @@ void GameWorld::updateView()
 
         break;
 
-    case Wall::RIGHT: image = ":/images/images/right.png"; break;
+    case Wall::RIGHT: image = ":/images/images/right_.png"; break;
     case Wall::BACK:
         if(puzzleStage <3)
             image = ":/images/images/back_.png";
@@ -341,6 +354,14 @@ void GameWorld::updateView()
     }
 
     roomLabel->setPixmap(QPixmap(image));
+
+    //hollogram door
+    if (controller.currentWall == Wall::RIGHT && puzzleStage == 4) {
+        hologramDoor->show();
+        hologramDoor->raise();
+    } else {
+        hologramDoor->hide();
+    }
 
     //light
     if (controller.roomState == RoomState::DARK)
@@ -411,6 +432,7 @@ void GameWorld::resizeEvent(QResizeEvent *event)
 
     effectOverlay->setGeometry(0, 0, width(), height());
     glitchOverlay->setGeometry(0, 0, width(), height());
+    hologramDoor->setGeometry(0, 0, width(), height());
 
     glitchLabel->setGeometry(0, 0, width(), height());
 

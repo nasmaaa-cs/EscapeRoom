@@ -428,6 +428,4 @@ CMakeFiles/draftEscapeRoomGame.dir/DeskPuzzle.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QHBoxLayout \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMessageBox \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmessagebox.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qdialog.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QRegularExpression \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qregularexpression.h
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qdialog.h

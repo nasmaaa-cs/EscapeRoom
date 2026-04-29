@@ -5,10 +5,6 @@
 #include <QTimer>
 #include <QMouseEvent>
 
-#include "LaptopPuzzle.h"
-#include "PrisonPuzzle.h"
-#include "GirlPuzzle.h"
-
 
 // constructor
 GameWorld::GameWorld(QWidget *parent)
@@ -111,7 +107,6 @@ GameWorld::GameWorld(QWidget *parent)
     prisonMarker->setGeometry(350, 300, 40, 40);
     prisonMarker->setStyleSheet("background-color: black;");
     prisonMarker->hide();
-
     prisonMarker->raise();
     prisonMarker->setAttribute(Qt::WA_TransparentForMouseEvents, true);
 
@@ -120,7 +115,6 @@ GameWorld::GameWorld(QWidget *parent)
     girlMarker->setGeometry(350, 300, 40, 40);
     girlMarker->setStyleSheet("background-color: black;");
     girlMarker->hide();
-
     girlMarker->raise();
     girlMarker->setAttribute(Qt::WA_TransparentForMouseEvents, true);
 
@@ -129,7 +123,6 @@ GameWorld::GameWorld(QWidget *parent)
     deskMarker->setGeometry(350, 300, 40, 40);
     deskMarker->setStyleSheet("background-color: black;");
     deskMarker->hide();
-
     deskMarker->raise();
     deskMarker->setAttribute(Qt::WA_TransparentForMouseEvents, true);
 
@@ -151,6 +144,15 @@ GameWorld::GameWorld(QWidget *parent)
     cmakeMarker->raise();
     cmakeMarker->setAttribute(Qt::WA_TransparentForMouseEvents, true);
 
+    //door puzzle unlocked
+    doorMarker = new QLabel(this);
+    doorMarker->setGeometry(350, 300, 40, 40);
+    doorMarker->setStyleSheet("background-color: black;");
+    doorMarker->hide();
+    doorMarker->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+    doorMarker->raise();
+    doorMarker->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+
     //laptop puzzle
     puzzle = new LaptopPuzzle(this);
     puzzle->hide();
@@ -166,6 +168,10 @@ GameWorld::GameWorld(QWidget *parent)
     //desk puzzle
     puzzle4 = new DeskPuzzle(this);
     puzzle4->hide();
+
+    //door puzzle
+    puzzle5 = new DoorPuzzle(this);
+    puzzle5->hide();
 
     //go back from laptop puzzle
     connect(puzzle, &LaptopPuzzle::backToRoom, this, [=]() {
@@ -287,6 +293,24 @@ GameWorld::GameWorld(QWidget *parent)
         updateView();
     });
 
+    //desk puzzle solved
+
+    connect(puzzle5, &DoorPuzzle::puzzleSolved, this, [=]() {
+        state = GameState::ROOM;
+        puzzleStage++;
+        puzzle5->hide();
+        doorMarker->hide();
+
+        messageLabel->setText("Puzzle 5 Completed!");
+        messageLabel->setWordWrap(true);
+        messageLabel->show();
+
+        QTimer::singleShot(2000, this, [=]() {
+            messageLabel->hide();
+        });
+        updateView();
+    });
+
     //wrong answer
 \
     connect(puzzle, &LaptopPuzzle::wrongAnswer, this, [=]() {
@@ -304,6 +328,11 @@ GameWorld::GameWorld(QWidget *parent)
     connect(puzzle4, &DeskPuzzle::wrongAnswer, this, [=]() {
         triggerGlitchShake(300, 10);
     });
+
+    connect(puzzle5, &DoorPuzzle::wrongAnswer, this, [=]() {
+        triggerGlitchShake(300, 10);
+    });
+
 
     //message when puzzle solved
     messageLabel = new QLabel(this);
@@ -344,7 +373,13 @@ void GameWorld::updateView()
 
         break;
 
-    case Wall::RIGHT: image = ":/images/images/right_.png"; break;
+    case Wall::RIGHT:
+        if (puzzleStage <4)
+            image = ":/images/images/right_.png";
+        else
+            image = ":/images/images/right_d.png";
+        break;
+
     case Wall::BACK:
         if(puzzleStage <3)
             image = ":/images/images/back_.png";
@@ -359,6 +394,7 @@ void GameWorld::updateView()
     if (controller.currentWall == Wall::RIGHT && puzzleStage == 4) {
         hologramDoor->show();
         hologramDoor->raise();
+        doorMarker->raise();
     } else {
         hologramDoor->hide();
     }
@@ -413,6 +449,17 @@ void GameWorld::updateView()
         cmakeMarker->hide();
     }
 
+    //shows when door puzzle unlocked
+    if (controller.currentWall == Wall::RIGHT && puzzleStage == 4)
+        doorMarker->show();
+    else
+        doorMarker->hide();
+
+    //door puzzle
+    if (puzzle5->isVisible()) {
+        puzzle5->raise();
+    }
+
 }
 
 //game mode
@@ -454,9 +501,13 @@ void GameWorld::resizeEvent(QResizeEvent *event)
     taskMarker->move(width()/2 - 360, height() * 0.68 - 80);
     cmakeMarker->move(width()/2 + 360, height() * 0.68 - 80);
 
+    doorMarker->move(width()/2 - 585, height()/2);
+
     if (puzzle4) {
         puzzle4->setGeometry(0, 0, width(), height());
     }
+
+    puzzle5->move((width() - puzzle5->width()) / 2, (height() - puzzle5->height()) / 2);
 }
 
 //zoom in
@@ -594,6 +645,19 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
             puzzle4->showCMakeWindow();
             return;
         }
+    }
+
+    if (state == GameState::ROOM &&
+        controller.currentWall == Wall::RIGHT &&
+        doorMarker->isVisible() &&
+        doorMarker->geometry().contains(event->pos())) {
+
+        puzzle5->setGeometry((width() - 400)/2, (height() - 300)/2, 400, 300);
+        puzzle5->raise();
+        puzzle5->show();
+        puzzle5->setFocus();
+
+        return;
     }
 
 }

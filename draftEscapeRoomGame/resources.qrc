@@ -18,6 +18,7 @@
         <file>images/desk_closeup_.png</file>
         <file>images/right_.png</file>
         <file>images/dg.gif</file>
+        <file>images/right_d.png</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>

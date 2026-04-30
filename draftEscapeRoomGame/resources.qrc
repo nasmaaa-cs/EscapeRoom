@@ -19,6 +19,7 @@
         <file>images/right_.png</file>
         <file>images/dg.gif</file>
         <file>images/right_d.png</file>
+        <file>images/escape.png</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>

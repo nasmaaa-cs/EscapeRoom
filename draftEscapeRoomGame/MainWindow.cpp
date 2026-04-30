@@ -2,14 +2,40 @@
 #include <QPixmap>
 #include <QResizeEvent>
 #include <QTimer>
+#include <QStackedWidget>
+
 #include "GameWorld.h"
+#include "mainMenu.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
+    // Setup the UI update timer
+    uiTimer = new QTimer(this);
+    connect(uiTimer, &QTimer::timeout, this, &MainWindow::updateTimerUI);
+
+    stackedWidget = new QStackedWidget(this);
+    setCentralWidget(stackedWidget);
+
+    main = new mainMenu(this);
     world = new GameWorld(this);
-    setCentralWidget(world);
+
+    stackedWidget->addWidget(main);
+    stackedWidget->addWidget(world);
+
+    stackedWidget->setCurrentIndex(0);
+
+    connect(world, &GameWorld::backToMainMenu, this, [=]() {
+        uiTimer->stop();
+        stackedWidget->setCurrentIndex(0);
+        timerLabel->hide();
+    });
+
+    connect(main, &mainMenu::StartGame, this, [=](GameMode mode, QString name) {
+        this->setPlayerName(name);
+        this->startGame(mode);
+    });
 
     // Timer
     timerLabel = new QLabel("00:00", this);
@@ -25,16 +51,32 @@ MainWindow::MainWindow(QWidget *parent)
     this->resize(800, 600);
     this->setMinimumSize(800, 600);
 
-    // Setup the UI update timer
-    uiTimer = new QTimer(this);
-    connect(uiTimer, &QTimer::timeout, this, &MainWindow::updateTimerUI);
+    timerLabel->raise();
+    opponentLabel->raise();
+
+
+    connect(world, &GameWorld::gameFinished, this, [=]() {
+        uiTimer->stop();
+
+        timerLabel->hide();
+        opponentLabel->hide();
+
+        QString finalTime = timerLabel->text();
+        world->setFinalTimeDisplay(finalTime);
+    });
 }
 
 //game mode
 void MainWindow::startGame(GameMode m)
 {
+    seconds = 0;
+    timerLabel->setText("00:00");
+    world->resetGame();
+
     mode = m;
     raceStarted = false;
+
+    stackedWidget->setCurrentIndex(1);
 
     if (mode == GameMode::RACE) {
         opponentLabel->show();

@@ -402,6 +402,8 @@ CMakeFiles/draftEscapeRoomGame.dir/MainWindow.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QElapsedTimer \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QStackedWidget \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qstackedwidget.h \
   /home/nasma/draftEscapeRoomGame/gameTypes.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QPixmap \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QResizeEvent \
@@ -482,4 +484,10 @@ CMakeFiles/draftEscapeRoomGame.dir/MainWindow.cpp.o: \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QStringList \
   /home/nasma/draftEscapeRoomGame/DeskPuzzle.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QMouseEvent \
-  /home/nasma/draftEscapeRoomGame/DoorPuzzle.h
+  /home/nasma/draftEscapeRoomGame/DoorPuzzle.h \
+  /home/nasma/draftEscapeRoomGame/mainMenu.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayout.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h

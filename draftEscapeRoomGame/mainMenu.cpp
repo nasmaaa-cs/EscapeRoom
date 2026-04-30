@@ -1,6 +1,6 @@
 #include "mainMenu.h"
 
-mainMenu::mainMenu()
+mainMenu::mainMenu(QWidget *parent) : QWidget(parent)
 {
     resize(800, 600);
     setMinimumSize(800, 600);

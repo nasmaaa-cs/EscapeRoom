@@ -13,7 +13,7 @@ class mainMenu : public QWidget {
     Q_OBJECT
 
 public:
-    mainMenu();
+    explicit mainMenu(QWidget *parent = nullptr);
 
 protected:
     void resizeEvent(QResizeEvent *event) override;

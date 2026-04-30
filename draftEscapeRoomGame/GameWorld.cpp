@@ -341,6 +341,21 @@ GameWorld::GameWorld(QWidget *parent)
     messageLabel->hide();
 
     updateView();
+
+    //escape
+    connect(puzzle5, &DoorPuzzle::puzzleSolved, this, [=]() {
+        state = GameState::ROOM;
+        puzzleStage = 5;
+        puzzle5->hide();
+        messageLabel->setText("The Hologram Door is stabilizing... Click it to exit!");
+        messageLabel->show();
+
+        QTimer::singleShot(3000, this, [=]() {
+            messageLabel->hide();
+        });
+        updateView();
+    });
+
 }
 
 //movement
@@ -390,12 +405,11 @@ void GameWorld::updateView()
 
     roomLabel->setPixmap(QPixmap(image));
 
-    //hollogram door
-    if (controller.currentWall == Wall::RIGHT && puzzleStage == 4) {
+    if (controller.currentWall == Wall::RIGHT && (puzzleStage == 4 || puzzleStage == 5)) {
+        doorMarker->show();
         hologramDoor->show();
-        hologramDoor->raise();
-        doorMarker->raise();
     } else {
+        doorMarker->hide();
         hologramDoor->hide();
     }
 
@@ -450,16 +464,22 @@ void GameWorld::updateView()
     }
 
     //shows when door puzzle unlocked
-    if (controller.currentWall == Wall::RIGHT && puzzleStage == 4)
+    bool onRightWall = (controller.currentWall == Wall::RIGHT);
+
+    if (onRightWall && puzzleStage == 4) {
         doorMarker->show();
-    else
-        doorMarker->hide();
-
-    //door puzzle
-    if (puzzle5->isVisible()) {
-        puzzle5->raise();
+        hologramDoor->show();
+        doorMarker->raise();
     }
-
+    else if (onRightWall && puzzleStage == 5) {
+        doorMarker->show();
+        hologramDoor->hide();
+        doorMarker->raise();
+    }
+    else {
+        doorMarker->hide();
+        hologramDoor->hide();
+    }
 }
 
 //game mode
@@ -646,16 +666,23 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
             return;
         }
     }
-
+    //door
     if (state == GameState::ROOM &&
         controller.currentWall == Wall::RIGHT &&
         doorMarker->isVisible() &&
-        doorMarker->geometry().contains(event->pos())) {
+        doorMarker->geometry().contains(event->pos()))
+    {
+        if (puzzleStage == 4) {
 
-        puzzle5->setGeometry((width() - 400)/2, (height() - 300)/2, 400, 300);
-        puzzle5->raise();
-        puzzle5->show();
-        puzzle5->setFocus();
+            puzzle5->setGeometry((width() - 400)/2, (height() - 300)/2, 400, 300);
+            puzzle5->raise();
+            puzzle5->show();
+            puzzle5->setFocus();
+        }
+        else if (puzzleStage == 5) {
+
+            showEndScreen();
+        }
 
         return;
     }
@@ -747,4 +774,83 @@ void GameWorld::typeMessage(const QString &fullText, int speedMs)
     });
 
     typeTimer->start(speedMs); // Lower is faster
+}
+
+void GameWorld::showEndScreen()
+{
+    emit gameFinished();
+
+    roomLabel->setPixmap(QPixmap(":/images/images/escape.png"));
+    roomLabel->show();
+
+    leftButton->hide();
+    rightButton->hide();
+    doorMarker->hide();
+    hologramDoor->hide();
+    overlay->hide();
+
+
+    if (!endMsg) {
+        endMsg = new QLabel(this);
+    }
+    endMsg->setGeometry(0, height()/2 - 100, width(), 150);
+    endMsg->setAlignment(Qt::AlignCenter);
+    endMsg->setStyleSheet("color: #00FF00; font-size: 32px; font-weight: bold; background: rgba(0,0,0,180);");
+    endMsg->show();
+    endMsg->raise();
+
+    menuBtn = new QPushButton("Main Menu", this);
+    menuBtn->setGeometry(width()/2 - 100, height() - 150, 200, 50);
+    menuBtn->setStyleSheet("QPushButton { background-color: #444; color: white; border: 2px solid #00FF00; font-size: 20px; }"
+                           "QPushButton:hover { background-color: #666; }");
+    menuBtn->show();
+    menuBtn->raise();
+
+    //to go back to main menu
+    connect(menuBtn, &QPushButton::clicked, this, [=]() {
+        emit backToMainMenu();
+    });
+}
+
+void GameWorld::setFinalTimeDisplay(const QString &time) {
+    if (!endMsg) {
+        endMsg = new QLabel(this);
+        endMsg->setAlignment(Qt::AlignCenter);
+        endMsg->setStyleSheet("color: #00FF00; font-size: 32px; font-weight: bold; background: rgba(0,0,0,180);");
+    }
+
+    endMsg->setText("CONGRATULATIONS!\nYou escaped in " + time + "\nNext chapter coming soon...");
+    endMsg->show();
+    endMsg->raise();
+}
+
+
+void GameWorld::resetGame() {
+
+    puzzleStage = 0;
+    state = GameState::ROOM;
+    controller.roomState = RoomState::DARK;
+    controller.currentWall = Wall::FRONT;
+
+    laptopMarker->show();
+    prisonMarker->hide();
+    girlMarker->hide();
+    deskMarker->hide();
+    doorMarker->hide();
+    hologramDoor->hide();
+    overlay->show();
+
+    puzzle->hide();
+    puzzle2->hide();
+    puzzle3->hide();
+    puzzle4->hide();
+    puzzle5->hide();
+
+    if (endMsg) endMsg->hide();
+    if (menuBtn) menuBtn->hide();
+
+    roomLabel->setPixmap(QPixmap(":/images/images/front_lp.png"));
+
+    updateView();
+
 }

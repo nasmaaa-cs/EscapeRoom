@@ -4,9 +4,11 @@
 #include <QLabel>
 #include <QTimer>
 #include <QElapsedTimer>
+#include <QStackedWidget>
 #include "gameTypes.h"
 
 class GameWorld;
+class mainMenu;
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -22,6 +24,10 @@ public:
 
 
 private:
+    int seconds = 0;
+
+    QStackedWidget *stackedWidget;
+    mainMenu *main;
 
     //GAME MODE
     GameMode mode;

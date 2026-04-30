@@ -41,11 +41,15 @@ public:
 
     void setGameMode(GameMode m);
     void triggerGlitchShake(int durationMs, int intensity);
+    void showEndScreen();
+    void resetGame();
+    void setFinalTimeDisplay(const QString &time);
 
 
 
 signals:
-    //void puzzleCompleted(int puzzleNumber);
+    void backToMainMenu();
+    void gameFinished();
 
 protected:
     void resizeEvent(QResizeEvent *event) override;
@@ -77,6 +81,9 @@ private:
     QLabel *hologramDoor;
     QMovie *hologramMovie;
     QGraphicsOpacityEffect *hologramOpacity;
+
+    QLabel *endMsg = nullptr;
+    QPushButton *menuBtn;
 
 
     //ROOM BUTTONS

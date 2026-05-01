@@ -4,6 +4,7 @@
 #include <QPushButton>
 #include <QTimer>
 #include <QMouseEvent>
+#include <cstdlib>
 
 
 // constructor
@@ -312,7 +313,7 @@ GameWorld::GameWorld(QWidget *parent)
     });
 
     //wrong answer
-\
+
     connect(puzzle, &LaptopPuzzle::wrongAnswer, this, [=]() {
         triggerGlitchShake(300, 10); // Shake for 300ms with 10px intensity
     });
@@ -527,7 +528,9 @@ void GameWorld::resizeEvent(QResizeEvent *event)
         puzzle4->setGeometry(0, 0, width(), height());
     }
 
-    puzzle5->move((width() - puzzle5->width()) / 2, (height() - puzzle5->height()) / 2);
+    if (puzzle5) {
+        puzzle5->move((width() - puzzle5->width()) / 2, (height() - puzzle5->height()) / 2);
+    }
 }
 
 //zoom in
@@ -746,7 +749,7 @@ void GameWorld::triggerGlitchShake(int durationMs, int intensity)
     });
     shakeTimer->start(20);
 }
-
+/*
 //typing effect
 void GameWorld::typeMessage(const QString &fullText, int speedMs)
 {
@@ -774,7 +777,7 @@ void GameWorld::typeMessage(const QString &fullText, int speedMs)
     });
 
     typeTimer->start(speedMs); // Lower is faster
-}
+}*/
 
 void GameWorld::showEndScreen()
 {
@@ -799,7 +802,8 @@ void GameWorld::showEndScreen()
     endMsg->show();
     endMsg->raise();
 
-    menuBtn = new QPushButton("Main Menu", this);
+    if (!menuBtn) {
+        menuBtn = new QPushButton("Main Menu", this);}
     menuBtn->setGeometry(width()/2 - 100, height() - 150, 200, 50);
     menuBtn->setStyleSheet("QPushButton { background-color: #444; color: white; border: 2px solid #00FF00; font-size: 20px; }"
                            "QPushButton:hover { background-color: #666; }");
@@ -846,7 +850,10 @@ void GameWorld::resetGame() {
     puzzle4->hide();
     puzzle5->hide();
 
+
+
     if (endMsg) endMsg->hide();
+
     if (menuBtn) menuBtn->hide();
 
     roomLabel->setPixmap(QPixmap(":/images/images/front_lp.png"));

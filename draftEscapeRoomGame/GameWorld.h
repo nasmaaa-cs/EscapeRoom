@@ -83,7 +83,7 @@ private:
     QGraphicsOpacityEffect *hologramOpacity;
 
     QLabel *endMsg = nullptr;
-    QPushButton *menuBtn;
+    QPushButton *menuBtn = nullptr;
 
 
     //ROOM BUTTONS

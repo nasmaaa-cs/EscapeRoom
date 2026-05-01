@@ -69,7 +69,8 @@ MainWindow::MainWindow(QWidget *parent)
 //game mode
 void MainWindow::startGame(GameMode m)
 {
-    seconds = 0;
+    gameTimer.restart();
+    //seconds = 0;
     timerLabel->setText("00:00");
     world->resetGame();
 

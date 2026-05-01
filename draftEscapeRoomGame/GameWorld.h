@@ -50,6 +50,7 @@ public:
 signals:
     void backToMainMenu();
     void gameFinished();
+    void puzzleCompleted(int puzzleIndex);
 
 protected:
     void resizeEvent(QResizeEvent *event) override;

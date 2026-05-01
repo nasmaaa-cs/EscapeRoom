@@ -8,17 +8,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    mainMenu menu;
-
-    menu.show();
-
-    QObject::connect(&menu, &mainMenu::StartGame, [&](GameMode mode, QString name) {
-        MainWindow *game = new MainWindow();
-        game->setPlayerName(name);
-        game->startGame(mode);
-        game->showMaximized();
-        menu.close();
-    });
+    MainWindow w;
+    w.show();
 
     return a.exec();
 }

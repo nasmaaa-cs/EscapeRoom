@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+66619c89f5995c41f91a116e0a5b45f4 CMakeFiles/draftEscapeRoomGame_autogen
+66619c89f5995c41f91a116e0a5b45f4 CMakeFiles/draftEscapeRoomGame_autogen_timestamp_deps
+b7401cae862bb8151cd55c02679ccf29 draftEscapeRoomGame_autogen/EWIEGA46WW/qrc_resources.cpp
+f795373bfec91fc43b4bb343f00f01f1 draftEscapeRoomGame_autogen/timestamp

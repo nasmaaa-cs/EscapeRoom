@@ -6,6 +6,8 @@
 
 #include "GameWorld.h"
 #include "mainMenu.h"
+#include "NetworkManager.h"
+
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -30,11 +32,12 @@ MainWindow::MainWindow(QWidget *parent)
         uiTimer->stop();
         stackedWidget->setCurrentIndex(0);
         timerLabel->hide();
+        opponentLabel->hide();
     });
 
-    connect(main, &mainMenu::StartGame, this, [=](GameMode mode, QString name) {
+    connect(main, &mainMenu::StartGame, this, [=](GameMode mode, QString name, NetworkRole role, QString ip) {
         this->setPlayerName(name);
-        this->startGame(mode);
+        this->startGame(mode, role, ip);
     });
 
     // Timer
@@ -42,9 +45,10 @@ MainWindow::MainWindow(QWidget *parent)
     timerLabel->setStyleSheet("color: white; font-size: 20px;");
     timerLabel->move(20, 20);
 
-    // fake opponent
+    // opponent
     opponentLabel = new QLabel("Opponent: 00:00", this);
     opponentLabel->move(20, 50);
+    opponentLabel->setFixedWidth(300);
     opponentLabel->setStyleSheet("color: red;");
 
     // Window setup
@@ -53,7 +57,31 @@ MainWindow::MainWindow(QWidget *parent)
 
     timerLabel->raise();
     opponentLabel->raise();
+    timerLabel->hide();
+    opponentLabel->hide();
 
+    netManager = new NetworkManager(this);
+
+    connect(netManager, &NetworkManager::opponentPuzzleSolved, this, [=](int puzzleId) {
+        opponentLabel->setText(QString("Opponent: Solving Puzzle %1").arg(puzzleId + 1));
+        opponentLabel->setStyleSheet("color: orange;");
+    });
+
+    connect(netManager, &NetworkManager::opponentFinished, this, [=](QString time) {
+        opponentLabel->setText(QString("Opponent Finished: %1").arg(time));
+        opponentLabel->setStyleSheet("color: red;");
+    });
+
+    connect(world, &GameWorld::puzzleCompleted, this, [=](int puzzleIndex) {
+        if (mode == GameMode::RACE) {
+            netManager->sendPuzzleSolved(puzzleIndex);
+        }
+    });
+
+    connect(netManager, &NetworkManager::opponentConnected, this, [=]() {
+        opponentLabel->setText("Opponent Joined! Race Started!");
+        opponentLabel->setStyleSheet("color: green; font-weight: bold;");
+    }, Qt::QueuedConnection);
 
     connect(world, &GameWorld::gameFinished, this, [=]() {
         uiTimer->stop();
@@ -62,25 +90,31 @@ MainWindow::MainWindow(QWidget *parent)
         opponentLabel->hide();
 
         QString finalTime = timerLabel->text();
+
         world->setFinalTimeDisplay(finalTime);
+        if (mode == GameMode::RACE) {
+            netManager->sendFinished(finalTime);
+        }
     });
 }
 
 //game mode
-void MainWindow::startGame(GameMode m)
+void MainWindow::startGame(GameMode m, NetworkRole role, QString ip)
 {
-    gameTimer.restart();
-    //seconds = 0;
     timerLabel->setText("00:00");
+    timerLabel->show();
     world->resetGame();
 
     mode = m;
+    this->currentRole = role;
+    this->targetIp = ip;
     raceStarted = false;
 
     stackedWidget->setCurrentIndex(1);
 
     if (mode == GameMode::RACE) {
         opponentLabel->show();
+        opponentLabel->setText("Waiting for connection...");
     } else {
         opponentLabel->hide();
     }
@@ -95,14 +129,22 @@ void MainWindow::startGameTimer()
 
     if (mode == GameMode::RACE && !raceStarted) {
         raceStartTime.start();
-        fakeOpponentTimer.start();
         raceStarted = true;
+
+
+        if (currentRole == NetworkRole::HOST) {
+            netManager->hostGame(8080);
+        } else {
+            qDebug() << "Attempting to join IP:" << targetIp;
+            QString connectIp = targetIp.isEmpty() ? "127.0.0.1" : targetIp;
+            netManager->joinGame(connectIp.toStdString(), 8080);
+        }
     }
 
     uiTimer->start(1000);
+
     updateTimerUI();
 }
-
 //timer update
 void MainWindow::updateTimerUI()
 {
@@ -126,16 +168,6 @@ void MainWindow::updateTimerUI()
 
     opponentLabel->show();
 
-    qint64 op = fakeOpponentTimer.elapsed();
-
-    int os = (op / 1000) % 60;
-    int om = (op / 60000);
-
-    opponentLabel->setText(
-        QString("Opponent: %1:%2")
-            .arg(om, 2, 10, QChar('0'))
-            .arg(os, 2, 10, QChar('0'))
-        );
 }
 
 void MainWindow::setPlayerName(QString name)

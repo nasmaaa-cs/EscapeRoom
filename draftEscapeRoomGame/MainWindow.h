@@ -6,9 +6,11 @@
 #include <QElapsedTimer>
 #include <QStackedWidget>
 #include "gameTypes.h"
+#include "NetworkManager.h"
 
 class GameWorld;
 class mainMenu;
+class NetworkManager;
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -19,18 +21,21 @@ public:
     void startGameTimer();
     void updateTimerUI();
 
-    void startGame(GameMode m);
+    void startGame(GameMode m, NetworkRole role, QString ip);
     void setPlayerName(QString name);
 
 
 private:
-    int seconds = 0;
+    NetworkManager *netManager;
 
     QStackedWidget *stackedWidget;
     mainMenu *main;
 
     //GAME MODE
     GameMode mode;
+
+    NetworkRole currentRole;
+    QString targetIp;
 
     //PlAYER NAME
     QString playerName;

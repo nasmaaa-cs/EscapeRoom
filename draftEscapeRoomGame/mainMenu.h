@@ -9,6 +9,7 @@
 
 #include "gameTypes.h"
 
+
 class mainMenu : public QWidget {
     Q_OBJECT
 
@@ -20,18 +21,24 @@ protected:
 
 signals:
 
-    void StartGame(GameMode mode, QString playerName);
+    void StartGame(GameMode mode, QString name, NetworkRole role, QString ip);
 
 private:
     QLabel *titleLabel;
     QPushButton *soloButton;
     QPushButton *raceButton;
     QPushButton *startButton;
+    QPushButton *hostButton;
+    QPushButton *joinButton;
+
     QLabel *background;
 
     QLineEdit *nameInput;
+    QLineEdit *ipInput;
 
     bool modeSelected = false;
 
     GameMode selectedMode;
+
+    NetworkRole selectedRole = NetworkRole::HOST;
 };

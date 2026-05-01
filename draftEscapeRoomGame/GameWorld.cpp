@@ -199,6 +199,7 @@ GameWorld::GameWorld(QWidget *parent)
     connect(puzzle, &LaptopPuzzle::puzzleSolved, this, [=]() {
 
         puzzleStage++;
+        emit puzzleCompleted(1);
         state = GameState::ROOM;
         puzzle->hide();
 
@@ -235,6 +236,7 @@ GameWorld::GameWorld(QWidget *parent)
 
         state = GameState::ROOM;
         puzzleStage++;
+        emit puzzleCompleted(2);
 
         puzzle2->hide();
 
@@ -257,6 +259,7 @@ GameWorld::GameWorld(QWidget *parent)
 
         state = GameState::ROOM;
         puzzleStage++;
+        emit puzzleCompleted(3);
 
         puzzle3->hide();
 
@@ -279,6 +282,8 @@ GameWorld::GameWorld(QWidget *parent)
     connect(puzzle4, &DeskPuzzle::puzzleSolved, this, [=]() {
         state = GameState::ROOM;
         puzzleStage++;
+        emit puzzleCompleted(4);
+
         puzzle4->hide();
         deskMarker->hide();
         taskMarker->hide();
@@ -299,6 +304,8 @@ GameWorld::GameWorld(QWidget *parent)
     connect(puzzle5, &DoorPuzzle::puzzleSolved, this, [=]() {
         state = GameState::ROOM;
         puzzleStage++;
+        emit puzzleCompleted(5);
+
         puzzle5->hide();
         doorMarker->hide();
 

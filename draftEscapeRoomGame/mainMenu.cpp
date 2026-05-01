@@ -28,15 +28,30 @@ mainMenu::mainMenu(QWidget *parent) : QWidget(parent)
         "background-color: rgba(0,0,0,150); color: white; padding: 10px;"
         );
 
+    //ip input
+    ipInput = new QLineEdit();
+    ipInput->setPlaceholderText("Opponent IP (e.g. 127.0.0.1)");
+    ipInput->setFixedSize(250, 40);
+    ipInput->setStyleSheet("background-color: rgba(0,0,0,150); color: white; padding: 10px;");
+    ipInput->hide();
+
     soloButton = new QPushButton("Play Solo");
     raceButton = new QPushButton("Race Mode");
     startButton = new QPushButton("Start");
+    hostButton = new QPushButton("Host Game", this);
+    joinButton = new QPushButton("Join Game", this);
     soloButton->setStyleSheet(
         "background-color: rgba(0,0,0,150); color: white; padding: 10px;"
         );
     raceButton->setStyleSheet(
         "background-color: rgba(0,0,0,150); color: white; padding: 10px;"
         );
+    hostButton->setFixedSize(200, 50);
+    joinButton->setFixedSize(200, 50);
+    hostButton->setStyleSheet(raceButton->styleSheet());
+    joinButton->setStyleSheet(raceButton->styleSheet());
+    hostButton->hide();
+    joinButton->hide();
     soloButton->setFixedSize(200, 50);
     raceButton->setFixedSize(200, 50);
     startButton->setFixedSize(200, 50);
@@ -56,6 +71,9 @@ mainMenu::mainMenu(QWidget *parent) : QWidget(parent)
     layout->addWidget(soloButton, 0, Qt::AlignCenter);
     layout->addWidget(raceButton, 0, Qt::AlignCenter);
     layout->addWidget(startButton, 0, Qt::AlignCenter);
+    layout->addWidget(hostButton, 0, Qt::AlignCenter);
+    layout->addWidget(joinButton, 0, Qt::AlignCenter);
+    layout->addWidget(ipInput, 0, Qt::AlignCenter);
 
     layout->addSpacing(20);
 
@@ -70,12 +88,28 @@ mainMenu::mainMenu(QWidget *parent) : QWidget(parent)
     connect(soloButton, &QPushButton::clicked, this, [=]() {
         modeSelected = true;
         selectedMode = GameMode::SOLO;
+        hostButton->hide();
+        joinButton->hide();
+        ipInput->hide();
         startButton->show();
     });
 
     connect(raceButton, &QPushButton::clicked, this, [=]() {
         modeSelected = true;
         selectedMode = GameMode::RACE;
+        hostButton->show();
+        joinButton->show();
+    });
+
+    connect(hostButton, &QPushButton::clicked, this, [=]() {
+        selectedRole = NetworkRole::HOST;
+        ipInput->hide();
+        startButton->show();
+    });
+
+    connect(joinButton, &QPushButton::clicked, this, [=]() {
+        selectedRole = NetworkRole::JOIN;
+        ipInput->show();
         startButton->show();
     });
 
@@ -86,7 +120,7 @@ mainMenu::mainMenu(QWidget *parent) : QWidget(parent)
             return;
         }
 
-        emit StartGame(selectedMode, nameInput->text());
+        emit StartGame(selectedMode, nameInput->text(), selectedRole, ipInput->text());
     });
 }
 void mainMenu::resizeEvent(QResizeEvent *event)

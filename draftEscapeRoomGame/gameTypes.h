@@ -5,6 +5,11 @@ enum class GameMode {
     RACE
 };
 
+enum class NetworkRole {
+    HOST,
+    JOIN
+};
+
 enum class Wall {
     FRONT,
     RIGHT,

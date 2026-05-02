@@ -605,7 +605,6 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
         state = GameState::GIRL_ZOOM;
         roomLabel->setPixmap(QPixmap(":/images/images/girl_side.png"));
 
-        //typeMessage("Thank you for helping me...", 50);
 
         return;
     }
@@ -619,10 +618,6 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
         roomLabel->setPixmap(QPixmap(":/images/images/girl_closeup_.png"));
 
 
-
-
-        //typeMessage("I can help you get out," 50);
-
         return;
     }
 
@@ -631,12 +626,11 @@ void GameWorld::mousePressEvent(QMouseEvent *event)
         state = GameState::GIRL_ZOOM3;
         roomLabel->setPixmap(QPixmap(":/images/images/girl_closeup_.png"));
 
-        //typeMessage("I don't have permission to read, write, or execute... Can you give me access?", 50);
 
         puzzle3->setGeometry((width() - 400)/2, (height() - 300)/2, 400, 300);
         puzzle3->raise();
         puzzle3->show();
-        puzzle3->setFocus();
+            puzzle3->setFocus();
 
 
         return;
@@ -790,7 +784,7 @@ void GameWorld::showEndScreen()
 {
     emit gameFinished();
 
-    roomLabel->setPixmap(QPixmap(":/images/images/escape.png"));
+    roomLabel->setPixmap(QPixmap(":/images/images/escaped.png"));
     roomLabel->show();
 
     leftButton->hide();
@@ -803,16 +797,21 @@ void GameWorld::showEndScreen()
     if (!endMsg) {
         endMsg = new QLabel(this);
     }
-    endMsg->setGeometry(0, height()/2 - 100, width(), 150);
     endMsg->setAlignment(Qt::AlignCenter);
-    endMsg->setStyleSheet("color: #00FF00; font-size: 32px; font-weight: bold; background: rgba(0,0,0,180);");
+    endMsg->setStyleSheet(
+        "background-color: rgba(0,0,0,150); color: white;font-size: 18px; padding: 10px;"
+        );
+    endMsg->adjustSize();
+    int x = (width() - endMsg->width()) / 2;
+    int y = (height() - endMsg->height()) / 2 - 30;
+    endMsg->move(x, y);
     endMsg->show();
     endMsg->raise();
 
     if (!menuBtn) {
         menuBtn = new QPushButton("Main Menu", this);}
     menuBtn->setGeometry(width()/2 - 100, height() - 150, 200, 50);
-    menuBtn->setStyleSheet("QPushButton { background-color: #444; color: white; border: 2px solid #00FF00; font-size: 20px; }"
+    menuBtn->setStyleSheet("QPushButton { background-color: black; color: white; border: 2px solid #black; font-size: 16px; }"
                            "QPushButton:hover { background-color: #666; }");
     menuBtn->show();
     menuBtn->raise();
@@ -827,10 +826,18 @@ void GameWorld::setFinalTimeDisplay(const QString &time) {
     if (!endMsg) {
         endMsg = new QLabel(this);
         endMsg->setAlignment(Qt::AlignCenter);
-        endMsg->setStyleSheet("color: #00FF00; font-size: 32px; font-weight: bold; background: rgba(0,0,0,180);");
+        endMsg->setStyleSheet(
+            "background-color: rgba(0,0,0,150); color: white; font-size: 18px; padding: 10px;"
+            );
     }
 
     endMsg->setText("CONGRATULATIONS!\nYou escaped in " + time + "\nNext chapter coming soon...");
+
+    endMsg->adjustSize();
+    int x = (width() - endMsg->width()) / 2;
+    int y = (height() - endMsg->height()) / 2 - 50;
+    endMsg->move(x, y);
+
     endMsg->show();
     endMsg->raise();
 }

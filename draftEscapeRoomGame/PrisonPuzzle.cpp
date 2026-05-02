@@ -81,10 +81,11 @@ void PrisonPuzzle::handleCommand(QString input)
         if (cleanInput == "git init")
         {
             //terminal->append("\n> " + input);
-            terminal->append("<font color='#00ff00'>✔ Repository initialized. System Unlocked.</font>\n"); //change when adding the other steps
+            terminal->append("<font color='#00ff00'>✔ Repository initialized. System Unlocked."
+                             "Task 2: check git status.</font>\n");
+            step++;
 
-            // Temporary
-            emit puzzleSolved();
+
         }
         else
         {
@@ -100,9 +101,9 @@ void PrisonPuzzle::handleCommand(QString input)
             terminal->ensureCursorVisible();
         }
     }
-}
 
-    /*else if (step == 1)
+
+    else if (step == 1)
     {
         if (input == "git status") {
             terminal->append("✔ No commits yet.");
@@ -148,13 +149,13 @@ void PrisonPuzzle::handleCommand(QString input)
 
     else if (step == 5)
     {
-        if (input == "ssh-keygen") {
+        if (input == "ssh-keygen -t ed25519 -C") {
             terminal->append("✔ SSH key generated!");
             terminal->append("\n Prison unlocked!");
 
             emit puzzleSolved();
         } else {
-            terminal->append(" Hint: ssh-keygen");
-        }*/
+            terminal->append(" Hint: ssh-keygen -t ed25519 -C ""your_email@anyemail.com");
+        }
 
-
+    }}

@@ -129,7 +129,6 @@ void GirlPuzzle::handleCommand(QString input)
             if (newDirName == "MyDirectory") {
                 dirCreated = true;
                 terminalOutput->append("<font color='#00ff00'>✔ Directory 'MyDirectory' created successfully.</font>");
-                emit puzzleSolved(); //temp
 
                 playerDir = new QTreeWidgetItem(fileBrowser);
                 playerDir->setText(0, "MyDirectory/");
@@ -144,9 +143,9 @@ void GirlPuzzle::handleCommand(QString input)
             terminalOutput->append("<font color='#ff0000'>[ERROR]: Unknown or incomplete command.</font>");
             terminalOutput->append("<font color='#ffff00'>HINT: Use 'mkdir &lt;dirname&gt;' to create a folder.</font>");
         }
-    }}
+    }
 
-/*else {
+else {
         if (command == "cp" && args.size() == 3) {
             QString sourceFile = args[1];
             QString targetDir = args[2];
@@ -186,4 +185,3 @@ void GirlPuzzle::handleCommand(QString input)
 
     terminalOutput->ensureCursorVisible();
 }
-*/

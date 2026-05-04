@@ -24,6 +24,8 @@ public:
     void startGame(GameMode m, NetworkRole role, QString ip);
     void setPlayerName(QString name);
 
+public slots:
+    void handleNetworkError(const QString& message);
 
 private:
     NetworkManager *netManager;

@@ -18,7 +18,7 @@ public:
     void sendPuzzleSolved(int puzzleNumber);
     void sendFinished(const QString& finalTime);
 
-    void sendJson(const QJsonObject& obj);
+    virtual void sendJson(const QJsonObject& obj);
 
 signals:
     // UI thread will listen to these
@@ -26,10 +26,13 @@ signals:
     void opponentPuzzleSolved(int puzzleNumber);
     void opponentFinished(QString finalTime);
     void networkError(QString errorMsg);
+    void connectionLost(const QString& reason);
 
 private:
     void networkThreadLoop();
     void startReading();
+    void handleRead(const boost::system::error_code& ec, std::size_t bytes_transferred);
+    void handleDisconnect(const boost::system::error_code& ec);
 
     boost::asio::io_context io_context;
     std::unique_ptr<boost::asio::ip::tcp::socket> socket;

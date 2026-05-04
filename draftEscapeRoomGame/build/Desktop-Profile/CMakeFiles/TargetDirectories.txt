@@ -1,9 +1,0 @@
-/home/nasma/draftEscapeRoomGame/build/Desktop-Profile/CMakeFiles/draftEscapeRoomGame.dir
-/home/nasma/draftEscapeRoomGame/build/Desktop-Profile/CMakeFiles/edit_cache.dir
-/home/nasma/draftEscapeRoomGame/build/Desktop-Profile/CMakeFiles/rebuild_cache.dir
-/home/nasma/draftEscapeRoomGame/build/Desktop-Profile/CMakeFiles/list_install_components.dir
-/home/nasma/draftEscapeRoomGame/build/Desktop-Profile/CMakeFiles/install.dir
-/home/nasma/draftEscapeRoomGame/build/Desktop-Profile/CMakeFiles/install/local.dir
-/home/nasma/draftEscapeRoomGame/build/Desktop-Profile/CMakeFiles/install/strip.dir
-/home/nasma/draftEscapeRoomGame/build/Desktop-Profile/CMakeFiles/draftEscapeRoomGame_autogen_timestamp_deps.dir
-/home/nasma/draftEscapeRoomGame/build/Desktop-Profile/CMakeFiles/draftEscapeRoomGame_autogen.dir

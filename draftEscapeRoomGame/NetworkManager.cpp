@@ -73,7 +73,6 @@ void NetworkManager::startReading()
             std::string messageStr;
             std::getline(is, messageStr);
 
-
             QJsonDocument doc = QJsonDocument::fromJson(QString::fromStdString(messageStr).toUtf8());
 
             if (!doc.isNull() && doc.isObject()) {
@@ -87,10 +86,9 @@ void NetworkManager::startReading()
                     emit opponentFinished(obj["value"].toString());
                 }
             }
-
             startReading();
         } else {
-            emit networkError("Opponent Disconnected");
+            handleDisconnect(ec);
         }
     });
 }
@@ -127,4 +125,27 @@ void NetworkManager::sendJson(const QJsonObject& obj)
                                      }
                                  });
     });
+}
+
+void NetworkManager::handleRead(const boost::system::error_code& ec, std::size_t bytes_transferred) {
+    if (!ec) {
+        startReading();
+    } else {
+        handleDisconnect(ec);
+    }
+}
+
+void NetworkManager::handleDisconnect(const boost::system::error_code& ec) {
+    QString message;
+    if (ec == boost::asio::error::eof) {
+        message = "The other player has left the game.";
+    } else {
+        message = "Network error: " + QString::fromStdString(ec.message());
+    }
+
+    emit connectionLost(message);
+
+    if (socket && socket->is_open()) {
+        socket->close();
+    }
 }

@@ -3,6 +3,7 @@
 #include <QResizeEvent>
 #include <QTimer>
 #include <QStackedWidget>
+#include <QMessageBox>
 
 #include "GameWorld.h"
 #include "mainMenu.h"
@@ -82,6 +83,9 @@ MainWindow::MainWindow(QWidget *parent)
         opponentLabel->setText("Opponent Joined! Race Started!");
         opponentLabel->setStyleSheet("color: green; font-weight: bold;");
     }, Qt::QueuedConnection);
+
+    connect(netManager, &NetworkManager::connectionLost,
+            this, &MainWindow::handleNetworkError);
 
     connect(world, &GameWorld::gameFinished, this, [=]() {
         uiTimer->stop();
@@ -173,4 +177,8 @@ void MainWindow::updateTimerUI()
 void MainWindow::setPlayerName(QString name)
 {
     playerName = name;
+}
+
+void MainWindow::handleNetworkError(const QString& message) {
+    QMessageBox::critical(this, "Connection Lost", message);
 }

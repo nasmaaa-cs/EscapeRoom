@@ -842,7 +842,6 @@ void GameWorld::setFinalTimeDisplay(const QString &time) {
     endMsg->raise();
 }
 
-
 void GameWorld::resetGame() {
 
     puzzleStage = 0;

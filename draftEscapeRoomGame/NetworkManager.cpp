@@ -1,6 +1,9 @@
 #include "NetworkManager.h"
 #include <iostream>
 #include <istream>
+#include <QJsonObject>
+#include <QJsonDocument>
+#include <QString>
 
 using boost::asio::ip::tcp;
 
@@ -62,61 +65,66 @@ void NetworkManager::joinGame(const std::string& ip, int port)
     });
 }
 
-void NetworkManager::sendPuzzleSolved(int puzzleNumber)
-{
-    if (!socket->is_open()) return;
-
-    std::string msg = "PUZZLE:" + std::to_string(puzzleNumber) + "\n";
-
-    auto msg_ptr = std::make_shared<std::string>(msg);
-
-    boost::asio::post(io_context, [this, msg_ptr]() {
-        boost::asio::async_write(*socket, boost::asio::buffer(*msg_ptr), [msg_ptr](boost::system::error_code ec, std::size_t /*length*/) {
-            if (ec) {
-                std::cerr << "Write error: " << ec.message() << std::endl;
-                    }
-        });
-    });
-}
-
-void NetworkManager::sendFinished(const QString& finalTime)
-{
-    if (!socket->is_open()) return;
-
-    std::string msg = "FINISH:" + finalTime.toStdString() + "\n";
-    auto msg_ptr = std::make_shared<std::string>(msg);
-
-    boost::asio::post(io_context, [this, msg_ptr]() {
-        boost::asio::async_write(*socket, boost::asio::buffer(*msg_ptr), [msg_ptr](boost::system::error_code ec, std::size_t /*length*/) {
-            if (ec) {
-                std::cerr << "Write error: " << ec.message() << std::endl;
-                    }
-        });
-    });
-}
-
 void NetworkManager::startReading()
 {
-    boost::asio::async_read_until(*socket, receiveBuffer, '\n', [this](boost::system::error_code ec, std::size_t /*length*/) {
+    boost::asio::async_read_until(*socket, receiveBuffer, '\n', [this](boost::system::error_code ec, std::size_t) {
         if (!ec) {
             std::istream is(&receiveBuffer);
-            std::string message;
-            std::getline(is, message);
+            std::string messageStr;
+            std::getline(is, messageStr);
 
-            if (message.rfind("PUZZLE:", 0) == 0) {
-                int pNum = std::stoi(message.substr(7));
-                emit opponentPuzzleSolved(pNum);
+
+            QJsonDocument doc = QJsonDocument::fromJson(QString::fromStdString(messageStr).toUtf8());
+
+            if (!doc.isNull() && doc.isObject()) {
+                QJsonObject obj = doc.object();
+                QString type = obj["type"].toString();
+
+                if (type == "PUZZLE") {
+                    emit opponentPuzzleSolved(obj["value"].toInt());
+                }
+                else if (type == "FINISH") {
+                    emit opponentFinished(obj["value"].toString());
+                }
             }
-
-            else if (message.rfind("FINISH:", 0) == 0) {
-                QString time = QString::fromStdString(message.substr(7));
-                emit opponentFinished(time);
-            }
-
 
             startReading();
-            } else {
-                emit networkError("Opponent Disconnected");
-            }
-        });
+        } else {
+            emit networkError("Opponent Disconnected");
+        }
+    });
+}
+
+void NetworkManager::sendPuzzleSolved(int puzzleNumber) {
+    QJsonObject obj;
+    obj["type"] = "PUZZLE";
+    obj["value"] = puzzleNumber;
+    sendJson(obj);
+}
+
+void NetworkManager::sendFinished(const QString& finalTime) {
+    QJsonObject obj;
+    obj["type"] = "FINISH";
+    obj["value"] = finalTime;
+    sendJson(obj);
+}
+
+void NetworkManager::sendJson(const QJsonObject& obj)
+{
+    if (!socket->is_open()) return;
+
+    QJsonDocument doc(obj);
+
+    QByteArray bytes = doc.toJson(QJsonDocument::Compact) + "\n";
+
+    auto msg_ptr = std::make_shared<std::string>(bytes.toStdString());
+
+    boost::asio::post(io_context, [this, msg_ptr]() {
+        boost::asio::async_write(*socket, boost::asio::buffer(*msg_ptr),
+                                 [msg_ptr](boost::system::error_code ec, std::size_t /*length*/) {
+                                     if (ec) {
+                                         std::cerr << "Write error: " << ec.message() << std::endl;
+                                     }
+                                 });
+    });
 }

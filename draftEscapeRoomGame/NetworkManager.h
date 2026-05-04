@@ -18,6 +18,8 @@ public:
     void sendPuzzleSolved(int puzzleNumber);
     void sendFinished(const QString& finalTime);
 
+    void sendJson(const QJsonObject& obj);
+
 signals:
     // UI thread will listen to these
     void opponentConnected();
